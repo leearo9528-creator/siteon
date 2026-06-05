@@ -121,45 +121,63 @@
     margin: 0 0 28px;
   }
 
-  /* Portfolio cards */
-  .pf-list { display: flex; flex-direction: column; gap: 16px; }
+  /* Portfolio cards (horizontal) */
+  .pf-list { display: flex; flex-direction: column; gap: 12px; }
   .pf-card {
     background: white;
     border: 1px solid var(--line);
-    border-radius: var(--radius);
+    border-radius: 14px;
     overflow: hidden;
-    display: block;
-    transition: transform 0.15s, box-shadow 0.15s;
+    display: grid;
+    grid-template-columns: 104px 1fr;
+    gap: 14px;
+    padding: 12px;
+    transition: transform 0.15s, border-color 0.15s;
   }
   .pf-card:active { transform: scale(0.99); }
   .pf-thumb {
     position: relative;
-    aspect-ratio: 16 / 10;
-    background: var(--bg);
+    width: 104px; height: 104px;
+    border-radius: 10px;
     overflow: hidden;
+    background: var(--bg);
   }
   .pf-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .pf-badge {
-    position: absolute; top: 12px; left: 12px;
-    background: rgba(15,18,23,0.85); color: white;
-    padding: 5px 10px; border-radius: 6px;
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.05em;
+  .pf-body {
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 2px 4px 2px 0;
   }
-  .pf-body { padding: 18px 18px 20px; }
-  .pf-name { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
-  .pf-desc { font-size: 14px; color: var(--text-2); margin-bottom: 14px; line-height: 1.6; }
+  .pf-badge {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    color: var(--blue); background: var(--blue-soft);
+    padding: 3px 8px; border-radius: 4px;
+    margin-bottom: 6px; letter-spacing: 0.02em;
+    align-self: flex-start;
+  }
+  .pf-name {
+    font-size: 16px; font-weight: 800;
+    color: var(--text); margin-bottom: 3px;
+    letter-spacing: -0.4px; line-height: 1.3;
+  }
+  .pf-desc {
+    font-size: 12.5px; color: var(--text-3);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
   .pf-foot {
     display: flex; justify-content: space-between; align-items: center;
-    padding-top: 14px; border-top: 1px solid var(--line);
+    margin-top: 10px;
   }
-  .pf-price {
-    font-size: 18px; font-weight: 800; color: var(--text);
-  }
-  .pf-price .won { color: var(--blue); }
+  .pf-price { font-size: 14px; font-weight: 800; color: var(--blue); }
   .pf-cta {
-    display: inline-flex; align-items: center; gap: 4px;
-    color: var(--blue); font-weight: 700; font-size: 14px;
+    display: inline-flex; align-items: center; gap: 3px;
+    color: var(--text-3); font-weight: 600; font-size: 12px;
   }
 
   /* Features list */
@@ -345,7 +363,7 @@
       </div>
       <div class="pf-body">
         <div class="pf-name">쾌적에어텍</div>
-        <div class="pf-desc">분해 청소·설치·가스충전을 다루는 전문 기사님을 위한 신뢰감 중심의 구성입니다.</div>
+        <div class="pf-desc">15년 경력 기사의 신뢰감을 강조한 블루 톤.</div>
         <div class="pf-foot">
           <div class="pf-price"><span class="won">39만원</span></div>
           <div class="pf-cta">샘플 보기 →</div>
@@ -360,7 +378,7 @@
       </div>
       <div class="pf-body">
         <div class="pf-name">한울도배 인테리어</div>
-        <div class="pf-desc">오랜 경력의 장인 정신을 강조한 베이지·우드 톤의 프리미엄 인테리어 분위기입니다.</div>
+        <div class="pf-desc">20년 장인 정신을 담은 베이지·우드 프리미엄 톤.</div>
         <div class="pf-foot">
           <div class="pf-price"><span class="won">39만원</span></div>
           <div class="pf-cta">샘플 보기 →</div>
@@ -375,7 +393,7 @@
       </div>
       <div class="pf-body">
         <div class="pf-name">디테일타일</div>
-        <div class="pf-desc">욕실·주방 줄눈 시공 전문가를 위한 깔끔한 블루 톤. 가격표까지 정직하게 안내합니다.</div>
+        <div class="pf-desc">정직한 가격표가 돋보이는 딥 네이비 톤.</div>
         <div class="pf-foot">
           <div class="pf-price"><span class="won">39만원</span></div>
           <div class="pf-cta">샘플 보기 →</div>
@@ -390,7 +408,7 @@
       </div>
       <div class="pf-body">
         <div class="pf-name">맑은날 입주청소</div>
-        <div class="pf-desc">여성 사장님께 적합한 민트 그린 톤. 100항목 체크리스트로 신뢰감을 더했습니다.</div>
+        <div class="pf-desc">100항목 체크리스트가 강점인 민트 그린 톤.</div>
         <div class="pf-foot">
           <div class="pf-price"><span class="won">39만원</span></div>
           <div class="pf-cta">샘플 보기 →</div>
@@ -405,7 +423,7 @@
       </div>
       <div class="pf-body">
         <div class="pf-name">오토디테일</div>
-        <div class="pf-desc">블랙 + 옐로 액센트의 프리미엄 톤. 차종별 패키지 비교표로 결제 전환을 높입니다.</div>
+        <div class="pf-desc">패키지 비교표 중심의 블랙+옐로 톤.</div>
         <div class="pf-foot">
           <div class="pf-price"><span class="won">39만원</span></div>
           <div class="pf-cta">샘플 보기 →</div>
@@ -420,7 +438,7 @@
       </div>
       <div class="pf-body">
         <div class="pf-name">온더네일</div>
-        <div class="pf-desc">누드 핑크 + 차콜의 차분한 톤. 시술 메뉴 카드와 디자인 갤러리로 예약 전환에 최적화.</div>
+        <div class="pf-desc">메뉴 카드·디자인 갤러리의 누드 핑크 톤.</div>
         <div class="pf-foot">
           <div class="pf-price"><span class="won">39만원</span></div>
           <div class="pf-cta">샘플 보기 →</div>
@@ -435,7 +453,7 @@
       </div>
       <div class="pf-body">
         <div class="pf-name">도담학습</div>
-        <div class="pf-desc">딥 네이비 + 앰버의 학구적 톤. 강사 프로필·성적 향상 사례로 학부모 신뢰를 만듭니다.</div>
+        <div class="pf-desc">강사 프로필·성적 사례의 딥 네이비 톤.</div>
         <div class="pf-foot">
           <div class="pf-price"><span class="won">39만원</span></div>
           <div class="pf-cta">샘플 보기 →</div>
