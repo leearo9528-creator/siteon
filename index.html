@@ -64,7 +64,8 @@
   /* Hero */
   .hero {
     background: var(--surface);
-    padding: 56px 22px 64px;
+    padding: 64px 22px 72px;
+    text-align: center;
   }
   .hero .eyebrow {
     display: inline-block;
@@ -74,29 +75,30 @@
     border-radius: 999px;
     font-size: 13px;
     font-weight: 700;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
   }
   .hero h1 {
-    font-size: 34px;
+    font-size: 32px;
     font-weight: 800;
-    line-height: 1.32;
+    line-height: 1.35;
     letter-spacing: -1px;
-    margin: 0 0 18px;
+    margin: 0 0 20px;
   }
   .hero h1 strong { color: var(--blue); }
   .hero .lead {
     font-size: 16px;
     color: var(--text-2);
-    margin: 0 0 28px;
-    line-height: 1.65;
+    margin: 0 0 36px;
+    line-height: 1.7;
   }
+  .hero .lead strong { color: var(--text); font-weight: 800; }
   .price-pill {
-    display: inline-flex; align-items: baseline; gap: 6px;
+    display: inline-flex; align-items: baseline; gap: 8px;
     background: #0e1217; color: white;
-    padding: 14px 20px; border-radius: 12px;
+    padding: 20px 32px; border-radius: 14px;
     font-weight: 800;
   }
-  .price-pill .num { font-size: 24px; }
+  .price-pill .num { font-size: 34px; letter-spacing: -1px; }
   .price-pill .unit { font-size: 14px; opacity: 0.7; font-weight: 600; }
 
   /* Section */
@@ -299,19 +301,15 @@
 </div>
 
 <section class="hero">
-  <div class="eyebrow">1인 사장님 전용</div>
-  <h1>사장님 홈페이지<br><strong>39만원</strong>으로 끝.</h1>
+  <div class="eyebrow">1인 사장님을 위한 홈페이지</div>
+  <h1>신뢰를 만드는<br>가장 빠르고 정확한 선택</h1>
   <p class="lead">
-    에어컨 청소·도배·타일 같은 1인 사장님을 위한<br>
-    원페이지 홈페이지. 만들면 바로 손님 받습니다.
+    아직도 블로그 쓰시나요?<br>
+    <strong>사이트온은 다 됩니다.</strong>
   </p>
   <div class="price-pill">
     <span class="num">₩390,000</span><span class="unit">/ VAT 별도</span>
   </div>
-  <p style="margin: 16px 0 0; font-size: 13px; color: var(--text-3);">
-    · <strong style="color:var(--text-2)">매장명.siteon.kr</strong> 서브도메인 무료 제공<br>
-    · 자기 도메인 연결 원하시면 +10만원 (1년치 포함)
-  </p>
 </section>
 
 <div class="sec-gap"></div>
@@ -429,6 +427,13 @@
 <section class="sec">
   <div class="sec-label">Compare</div>
   <h2 class="sec-title">비교해보세요</h2>
+  <div style="background: var(--blue-soft); border-radius: 14px; padding: 18px 18px; margin-bottom: 18px; font-size: 14px; line-height: 1.7;">
+    <div style="font-weight: 800; color: var(--blue); margin-bottom: 6px;">📌 주소(도메인) 안내</div>
+    <div style="color: var(--text-2);">
+      · <strong style="color:var(--text)">매장명.siteon.kr</strong> 서브도메인 무료 평생 제공<br>
+      · 자기 도메인(예: 쾌적에어텍.com) 원하시면 <strong style="color:var(--text)">+10만원</strong> (구입·연결 1년치 포함)
+    </div>
+  </div>
   <div class="compare">
     <div class="compare-row head">
       <div></div>
