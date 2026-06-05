@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오토디테일 | 출장 세차·디테일링 전문</title>
+<meta name="description" content="고객의 자리로 찾아가는 프리미엄 디테일링. 광택·실내·유리막코팅 전문, 차종별 정찰제.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #FFC107;
+    --accent-dark: #C99100;
+    --accent-soft: #FFF8E1;
+    --ink: #0E0E12;
+    --ink-2: #1A1A21;
+    --text: #3A3A45;
+    --muted: #6B6B78;
+    --line: #E5E5EA;
+    --line-2: #F3F3F5;
+    --bg: #F8F8FA;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    color: var(--ink-2); background: white; line-height: 1.65;
+    -webkit-font-smoothing: antialiased; letter-spacing: -0.3px; font-size: 15px;
+  }
+  body { max-width: 520px; margin: 0 auto; padding-bottom: 76px; background: white; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .demo-bar { background: var(--ink); color: white; padding: 9px 18px; font-size: 12px; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
+  .demo-bar a { color: var(--accent); font-weight: 600; }
+
+  .nav { padding: 18px 22px; background: white; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 40; }
+  .nav-brand { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; color: var(--ink); }
+  .nav-brand span { color: var(--accent); margin-right: 2px; }
+  .nav-tel { font-size: 13px; font-weight: 700; color: var(--ink); }
+
+  .hero {
+    position: relative; background: var(--ink); color: white;
+    min-height: 540px;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=1200&q=85');
+    background-size: cover; background-position: center; opacity: 0.45;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(14,14,18,0.2) 0%, rgba(14,14,18,0.9) 80%);
+  }
+  .hero-inner { position: relative; z-index: 1; padding: 72px 24px 48px; margin-top: auto; }
+  .hero-eyebrow {
+    display: inline-block; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.15em; color: var(--accent);
+    margin-bottom: 20px; padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,193,7,0.4);
+  }
+  .hero h1 { font-size: 32px; font-weight: 800; line-height: 1.3; letter-spacing: -1px; margin-bottom: 16px; }
+  .hero h1 strong { color: var(--accent); font-weight: 800; }
+  .hero-sub { font-size: 15px; color: rgba(255,255,255,0.78); line-height: 1.75; margin-bottom: 32px; max-width: 380px; }
+  .hero-cta-row { display: flex; gap: 10px; }
+  .btn-primary { flex: 1; background: var(--accent); color: var(--ink); padding: 16px; border-radius: 8px; font-weight: 700; font-size: 15px; text-align: center; }
+  .btn-secondary { flex: 1; background: transparent; color: white; border: 1px solid rgba(255,255,255,0.4); padding: 16px; border-radius: 8px; font-weight: 600; font-size: 15px; text-align: center; }
+
+  .stats { display: grid; grid-template-columns: 1fr 1fr 1fr; background: white; border-bottom: 1px solid var(--line); }
+  .stat { padding: 28px 12px; text-align: center; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-size: 26px; font-weight: 800; color: var(--ink); letter-spacing: -1px; line-height: 1; }
+  .stat-num .unit { font-size: 14px; font-weight: 600; color: var(--muted); margin-left: 2px; }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 8px; font-weight: 500; }
+
+  .sec { padding: 72px 24px; background: white; }
+  .sec.alt { background: var(--bg); }
+  .sec.dark { background: var(--ink); color: white; }
+  .sec.dark .sec-title { color: white; }
+  .sec.dark .sec-lead { color: rgba(255,255,255,0.65); }
+  .sec-eyebrow { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; }
+  .sec-title { font-size: 26px; font-weight: 800; color: var(--ink); letter-spacing: -0.8px; line-height: 1.35; margin-bottom: 12px; }
+  .sec-lead { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 36px; }
+
+  .service-list { display: flex; flex-direction: column; }
+  .service-item { padding: 24px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; }
+  .service-item:last-child { border-bottom: 1px solid var(--line); }
+  .service-info h4 { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.3px; }
+  .service-info p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .service-price { text-align: right; font-size: 15px; font-weight: 700; color: var(--ink); white-space: nowrap; }
+  .service-price .unit { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+  /* Packages (세차 특화) */
+  .pkg-list { display: flex; flex-direction: column; gap: 16px; }
+  .pkg {
+    background: white; border: 1px solid var(--line);
+    border-radius: 8px; padding: 28px 24px;
+    position: relative;
+  }
+  .pkg.featured {
+    border: 1.5px solid var(--accent);
+  }
+  .pkg-tag {
+    position: absolute; top: -10px; right: 20px;
+    background: var(--accent); color: var(--ink);
+    font-size: 11px; font-weight: 800;
+    padding: 4px 10px; border-radius: 4px;
+    letter-spacing: 0.05em;
+  }
+  .pkg-name {
+    font-size: 14px; font-weight: 700;
+    color: var(--muted); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .pkg-price {
+    font-size: 28px; font-weight: 800;
+    color: var(--ink); letter-spacing: -1px;
+    margin-bottom: 4px;
+  }
+  .pkg-price .unit { font-size: 13px; color: var(--muted); font-weight: 500; margin-left: 2px; }
+  .pkg-from { font-size: 12px; color: var(--muted); margin-bottom: 18px; }
+  .pkg-list-items {
+    list-style: none; padding: 18px 0 0;
+    border-top: 1px solid var(--line);
+  }
+  .pkg-list-items li {
+    font-size: 13px; color: var(--text);
+    padding: 6px 0; line-height: 1.6;
+    display: flex; gap: 10px;
+  }
+  .pkg-list-items li::before {
+    content: ''; flex-shrink: 0;
+    width: 5px; height: 9px;
+    border-right: 1.5px solid var(--accent);
+    border-bottom: 1.5px solid var(--accent);
+    transform: rotate(45deg); margin-top: 5px;
+  }
+  .pkg-list-items li.dim { color: var(--muted); }
+  .pkg-list-items li.dim::before {
+    border-right-color: var(--line); border-bottom-color: var(--line);
+  }
+
+  .process-list { display: flex; flex-direction: column; gap: 20px; }
+  .process-item { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: flex-start; }
+  .process-num { width: 36px; height: 36px; border: 1.5px solid var(--ink); color: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .process-text h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 3px; letter-spacing: -0.3px; }
+  .process-text p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+  .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .gallery-item { aspect-ratio: 1; overflow: hidden; background: var(--line); }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
+
+  .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .cred-card { background: white; padding: 28px 18px; text-align: center; }
+  .cred-mark { width: 40px; height: 40px; margin: 0 auto 14px; border: 1.5px solid var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: var(--ink); letter-spacing: -0.3px; }
+  .cred-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.3px; }
+  .cred-sub { font-size: 12px; color: var(--muted); line-height: 1.55; }
+
+  .review-list { display: flex; flex-direction: column; }
+  .review-item { padding: 24px 0; border-top: 1px solid var(--line); }
+  .review-item:last-child { border-bottom: 1px solid var(--line); }
+  .review-text { font-size: 15px; color: var(--ink-2); line-height: 1.75; margin-bottom: 14px; letter-spacing: -0.3px; }
+  .review-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+  .review-name { font-weight: 600; color: var(--text); }
+
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-top: 1px solid var(--line); }
+  .faq-item:last-child { border-bottom: 1px solid var(--line); }
+  .faq-q { width: 100%; background: transparent; border: none; padding: 22px 0; text-align: left; font-family: inherit; font-size: 15px; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; letter-spacing: -0.3px; }
+  .faq-arr { width: 18px; height: 18px; border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg); margin-bottom: 4px; transition: transform 0.2s; }
+  .faq-q.open .faq-arr { transform: rotate(-135deg); margin-bottom: -4px; }
+  .faq-a { display: none; padding: 0 0 22px; font-size: 14px; color: var(--text); line-height: 1.8; }
+  .faq-a.open { display: block; }
+
+  .cta-band { background: var(--ink); color: white; padding: 64px 24px; text-align: center; }
+  .cta-band-title { font-size: 24px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.7px; line-height: 1.4; }
+  .cta-band-title strong { color: var(--accent); font-weight: 800; }
+  .cta-band-sub { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 32px; line-height: 1.7; }
+  .cta-tel-large { display: inline-block; font-size: 28px; font-weight: 800; color: var(--ink); background: var(--accent); letter-spacing: -0.5px; padding: 18px 36px; border-radius: 8px; }
+
+  .contact-info { background: white; padding: 56px 24px; border-top: 1px solid var(--line); }
+  .contact-row { display: grid; grid-template-columns: 90px 1fr; padding: 16px 0; border-bottom: 1px solid var(--line-2); font-size: 14px; }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row strong { font-weight: 600; color: var(--muted); }
+  .contact-row span { color: var(--ink); font-weight: 500; }
+
+  .bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); max-width: 520px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; background: white; border-top: 1px solid var(--line); z-index: 50; }
+  .bnav-btn { padding: 18px; font-size: 15px; font-weight: 700; text-align: center; letter-spacing: -0.3px; }
+  .bnav-call { background: var(--ink); color: white; }
+  .bnav-kakao { background: var(--accent); color: var(--ink); }
+</style>
+</head>
+<body>
+
+<div class="demo-bar">
+  <span>사이트온 샘플 · 출장 세차·디테일링 업종</span>
+  <a href="/">← 메인으로</a>
+</div>
+
+<nav class="nav">
+  <div class="nav-brand"><span>•</span> 오토디테일</div>
+  <a href="tel:010-0000-0000" class="nav-tel">010-0000-0000</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">MOBILE DETAILING</div>
+    <h1>당신의 차고로<br>찾아가는 <strong>디테일링.</strong></h1>
+    <p class="hero-sub">사무실 주차장, 자택 차고 어디든.<br>장비 일체 지참, 90분이면 새 차로 돌려드립니다.</p>
+    <div class="hero-cta-row">
+      <a href="tel:010-0000-0000" class="btn-primary">예약 문의</a>
+      <a href="#package" class="btn-secondary">패키지 보기</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">8<span class="unit">년</span></div><div class="stat-label">디테일링 경력</div></div>
+  <div class="stat"><div class="stat-num">1,500<span class="unit">+</span></div><div class="stat-label">차량 시공</div></div>
+  <div class="stat"><div class="stat-num">90<span class="unit">분</span></div><div class="stat-label">평균 작업 시간</div></div>
+</div>
+
+<section class="sec">
+  <div class="sec-eyebrow">Service</div>
+  <h2 class="sec-title">제공 서비스</h2>
+  <p class="sec-lead">간단한 출장 세차부터 풀 디테일링까지<br>고객 차량 상태에 맞춰 진행합니다.</p>
+
+  <div class="service-list">
+    <div class="service-item">
+      <div class="service-info"><h4>출장 외부 세차</h4><p>스노우폼·휠·타이어 세정, 발수 코팅</p></div>
+      <div class="service-price">35,000원<span class="unit">~</span></div>
+    </div>
+    <div class="service-item">
+      <div class="service-info"><h4>실내 디테일링</h4><p>가죽·시트·천장·매트 정밀 청소</p></div>
+      <div class="service-price">90,000원<span class="unit">~</span></div>
+    </div>
+    <div class="service-item">
+      <div class="service-info"><h4>광택 (폴리싱)</h4><p>스월·스크래치 제거 후 광택 복원</p></div>
+      <div class="service-price">180,000원<span class="unit">~</span></div>
+    </div>
+    <div class="service-item">
+      <div class="service-info"><h4>유리막 코팅</h4><p>장기 보호·발수, 6개월~1년 유지</p></div>
+      <div class="service-price">350,000원<span class="unit">~</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="package">
+  <div class="sec-eyebrow">Packages</div>
+  <h2 class="sec-title">추천 패키지</h2>
+  <p class="sec-lead">자주 찾으시는 조합을 정찰제로 구성했습니다.<br>경차·중형·대형 차종에 따라 가격이 조정됩니다.</p>
+
+  <div class="pkg-list">
+    <div class="pkg">
+      <div class="pkg-name">Basic</div>
+      <div class="pkg-price">59,000<span class="unit">원~</span></div>
+      <div class="pkg-from">중형 세단 기준</div>
+      <ul class="pkg-list-items">
+        <li>외부 스노우폼 세차</li>
+        <li>휠·타이어 세정</li>
+        <li>실내 진공 청소</li>
+        <li>대시보드 와이핑</li>
+        <li class="dim">광택·코팅 미포함</li>
+      </ul>
+    </div>
+
+    <div class="pkg featured">
+      <div class="pkg-tag">BEST</div>
+      <div class="pkg-name">Standard</div>
+      <div class="pkg-price">149,000<span class="unit">원~</span></div>
+      <div class="pkg-from">중형 세단 기준</div>
+      <ul class="pkg-list-items">
+        <li>외부 세차 + 발수 코팅</li>
+        <li>휠·타이어 정밀 세정</li>
+        <li>실내 디테일링 (시트·매트)</li>
+        <li>천장·가죽 클리닝</li>
+        <li>유리 발수 처리</li>
+      </ul>
+    </div>
+
+    <div class="pkg">
+      <div class="pkg-name">Premium</div>
+      <div class="pkg-price">390,000<span class="unit">원~</span></div>
+      <div class="pkg-from">중형 세단 기준</div>
+      <ul class="pkg-list-items">
+        <li>Standard 전체 포함</li>
+        <li>1단계 광택 (스월 제거)</li>
+        <li>유리막 코팅 1년 보증</li>
+        <li>엔진룸 클리닝</li>
+        <li>차내 탈취·살균</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow">Process</div>
+  <h2 class="sec-title">진행 절차</h2>
+  <p class="sec-lead">예약부터 마감까지<br>고객 차량을 안전하게 모십니다.</p>
+
+  <div class="process-list">
+    <div class="process-item"><div class="process-num">1</div>
+      <div class="process-text"><h4>전화·카톡 예약</h4><p>차종, 희망 일정, 출장 주소를 알려주시기 바랍니다.</p></div></div>
+    <div class="process-item"><div class="process-num">2</div>
+      <div class="process-text"><h4>일정 확정 및 안내</h4><p>방문 30분 전 도착 예정 시간을 안내드립니다.</p></div></div>
+    <div class="process-item"><div class="process-num">3</div>
+      <div class="process-text"><h4>차량 점검</h4><p>도장면·실내 상태를 확인 후 작업 범위를 안내드립니다.</p></div></div>
+    <div class="process-item"><div class="process-num">4</div>
+      <div class="process-text"><h4>디테일링 진행</h4><p>평균 90분~3시간, 패키지에 따라 작업합니다.</p></div></div>
+    <div class="process-item"><div class="process-num">5</div>
+      <div class="process-text"><h4>고객 확인 및 결제</h4><p>함께 확인 후 카드·계좌이체로 결제 진행합니다.</p></div></div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="sec-eyebrow">Portfolio</div>
+  <h2 class="sec-title">시공 사례</h2>
+  <p class="sec-lead">최근 진행한 디테일링 결과입니다.</p>
+
+  <div class="gallery">
+    <div class="gallery-item wide"><img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=800&q=80" alt=""></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=400&q=80" alt=""></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1605164599901-db7f68c4b3a3?w=400&q=80" alt=""></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1632823469850-1b7b1e8b7e5e?w=400&q=80" alt=""></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1591293836027-e05b48473b67?w=400&q=80" alt=""></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow">Credentials</div>
+  <h2 class="sec-title">오토디테일의 약속</h2>
+  <p class="sec-lead">전문 장비와 정품 약품만 사용하며,<br>시공 중 발생한 손상은 전액 보장합니다.</p>
+
+  <div class="cred-grid">
+    <div class="cred-card"><div class="cred-mark">장비</div><div class="cred-name">전문 디테일링 장비</div><div class="cred-sub">루퍼·DA·스팀기 일체</div></div>
+    <div class="cred-card"><div class="cred-mark">정품</div><div class="cred-name">정품 약품 사용</div><div class="cred-sub">Koch·Meguiar's 등</div></div>
+    <div class="cred-card"><div class="cred-mark">보험</div><div class="cred-name">시공 책임보험</div><div class="cred-sub">손상 시 전액 보상</div></div>
+    <div class="cred-card"><div class="cred-mark">정찰</div><div class="cred-name">차종별 정찰제</div><div class="cred-sub">추가 비용 없음</div></div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="sec-eyebrow">Review</div>
+  <h2 class="sec-title">고객 후기</h2>
+  <p class="sec-lead">실제 시공받으신 고객님들의 평가입니다.</p>
+
+  <div class="review-list">
+    <div class="review-item">
+      <p class="review-text">회사 주차장으로 와주셔서 점심시간 동안 끝났습니다. 외부 광택까지 받았는데 차가 완전히 새것 같아요.</p>
+      <div class="review-meta"><span class="review-name">정○○ 고객님 · G80</span><span>2025. 07</span></div>
+    </div>
+    <div class="review-item">
+      <p class="review-text">중고차 받자마자 풀 디테일링 의뢰했는데, 실내 가죽·천장까지 정말 꼼꼼하게 해주셨습니다. 가격도 사전 안내 그대로였습니다.</p>
+      <div class="review-meta"><span class="review-name">박○○ 고객님 · 카니발</span><span>2025. 06</span></div>
+    </div>
+    <div class="review-item">
+      <p class="review-text">유리막 코팅받았는데 비 오는 날 발수가 정말 좋습니다. 사진으로 작업 전후 보내주셔서 신뢰가 갔습니다.</p>
+      <div class="review-meta"><span class="review-name">이○○ 고객님 · 아반떼</span><span>2025. 05</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow">FAQ</div>
+  <h2 class="sec-title">자주 묻는 질문</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">작업에 필요한 공간이 어느 정도 되나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">차량 주변 2m 이상의 평지 공간이면 충분합니다. 지하주차장도 환기만 되면 가능합니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">물·전기는 어떻게 사용하나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">탱크와 발전기를 지참하므로 별도 물·전기 공급은 필요하지 않습니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">작업 시간은 얼마나 소요되나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">Basic 90분, Standard 2~3시간, Premium 4~5시간 정도 소요됩니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">SUV·대형차는 추가 비용이 있나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">차종별 정찰제로, 경차 -20%, 중형 기준, 대형·SUV +20%, RV +30% 적용됩니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">출장 가능 지역이 어디까지인가요?<span class="faq-arr"></span></button>
+      <div class="faq-a">서울 전 지역과 경기 일부(분당·판교·일산·송도) 출장 가능합니다.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h3 class="cta-band-title">고객 자리로<br>찾아가는 <strong>디테일링.</strong></h3>
+  <p class="cta-band-sub">차종·일정 알려주시면 즉시 견적<br>주말 예약도 받습니다.</p>
+  <a href="tel:010-0000-0000" class="cta-tel-large">010-0000-0000</a>
+</section>
+
+<section class="contact-info">
+  <div class="contact-row"><strong>운영</strong><span>오토디테일 · 황도윤</span></div>
+  <div class="contact-row"><strong>전화</strong><span>010-0000-0000</span></div>
+  <div class="contact-row"><strong>운영시간</strong><span>평일·주말 09:00 - 21:00</span></div>
+  <div class="contact-row"><strong>출장지역</strong><span>서울 · 경기 일부</span></div>
+  <div class="contact-row"><strong>주소</strong><span>서울 강남구 ○○로 ○○</span></div>
+</section>
+
+<div class="bottom-nav">
+  <a href="tel:010-0000-0000" class="bnav-btn bnav-call">전화 예약</a>
+  <a href="https://open.kakao.com/o/sXXXXXXX" class="bnav-btn bnav-kakao">카톡 문의</a>
+</div>
+
+<script>
+function faq(btn) {
+  const a = btn.nextElementSibling;
+  const wasOpen = a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(x => x.classList.remove('open'));
+  if (!wasOpen) { a.classList.add('open'); btn.classList.add('open'); }
+}
+</script>
+</body>
+</html>

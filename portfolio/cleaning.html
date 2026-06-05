@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>맑은날 입주청소 | 이사·입주·리모델링 청소 전문</title>
+<meta name="description" content="여성 청소사 2인 1조 방문. 친환경 세제만 사용. 100항목 체크리스트 기준 완벽 시공.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #0F9D7F;
+    --accent-dark: #0A7A62;
+    --accent-soft: #E6F5F0;
+    --ink: #0D1F1A;
+    --ink-2: #1A2E27;
+    --text: #3A4D45;
+    --muted: #6B7D75;
+    --line: #E2EBE8;
+    --line-2: #F0F5F3;
+    --bg: #F7FAF9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    color: var(--ink-2);
+    background: white;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.3px;
+    font-size: 15px;
+  }
+  body { max-width: 520px; margin: 0 auto; padding-bottom: 76px; background: white; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .demo-bar {
+    background: var(--ink); color: white;
+    padding: 9px 18px; font-size: 12px; font-weight: 500;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .demo-bar a { color: #6EE7CF; font-weight: 600; }
+
+  .nav {
+    padding: 18px 22px; background: white;
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 40;
+  }
+  .nav-brand { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; color: var(--ink); }
+  .nav-brand span { color: var(--accent); margin-right: 2px; }
+  .nav-tel { font-size: 13px; font-weight: 700; color: var(--accent); }
+
+  .hero {
+    position: relative; background: var(--ink); color: white;
+    min-height: 540px;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=85');
+    background-size: cover; background-position: center; opacity: 0.4;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(13,31,26,0.25) 0%, rgba(13,31,26,0.88) 80%);
+  }
+  .hero-inner { position: relative; z-index: 1; padding: 72px 24px 48px; margin-top: auto; }
+  .hero-eyebrow {
+    display: inline-block; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.15em; color: #6EE7CF;
+    margin-bottom: 20px; padding-bottom: 8px;
+    border-bottom: 1px solid rgba(110,231,207,0.4);
+  }
+  .hero h1 { font-size: 32px; font-weight: 800; line-height: 1.3; letter-spacing: -1px; margin-bottom: 16px; }
+  .hero h1 strong { color: #6EE7CF; font-weight: 800; }
+  .hero-sub { font-size: 15px; color: rgba(255,255,255,0.78); line-height: 1.75; margin-bottom: 32px; max-width: 380px; }
+  .hero-cta-row { display: flex; gap: 10px; }
+  .btn-primary { flex: 1; background: white; color: var(--ink); padding: 16px; border-radius: 8px; font-weight: 700; font-size: 15px; text-align: center; }
+  .btn-secondary { flex: 1; background: transparent; color: white; border: 1px solid rgba(255,255,255,0.4); padding: 16px; border-radius: 8px; font-weight: 600; font-size: 15px; text-align: center; }
+
+  .stats { display: grid; grid-template-columns: 1fr 1fr 1fr; background: white; border-bottom: 1px solid var(--line); }
+  .stat { padding: 28px 12px; text-align: center; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-size: 26px; font-weight: 800; color: var(--ink); letter-spacing: -1px; line-height: 1; }
+  .stat-num .unit { font-size: 14px; font-weight: 600; color: var(--muted); margin-left: 2px; }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 8px; font-weight: 500; }
+
+  .sec { padding: 72px 24px; background: white; }
+  .sec.alt { background: var(--bg); }
+  .sec-eyebrow { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; }
+  .sec-title { font-size: 26px; font-weight: 800; color: var(--ink); letter-spacing: -0.8px; line-height: 1.35; margin-bottom: 12px; }
+  .sec-lead { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 36px; }
+
+  .service-list { display: flex; flex-direction: column; }
+  .service-item { padding: 24px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; }
+  .service-item:last-child { border-bottom: 1px solid var(--line); }
+  .service-info h4 { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.3px; }
+  .service-info p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .service-price { text-align: right; font-size: 15px; font-weight: 700; color: var(--ink); white-space: nowrap; }
+  .service-price .unit { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+  /* Checklist (입주청소 특화) */
+  .check-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .check-zone {
+    background: white;
+    padding: 22px 18px;
+  }
+  .check-zone h4 {
+    font-size: 13px; font-weight: 700;
+    color: var(--accent); margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+  .check-zone ul { list-style: none; }
+  .check-zone li {
+    font-size: 13px; color: var(--text);
+    padding: 4px 0; line-height: 1.55;
+    display: flex; gap: 8px;
+  }
+  .check-zone li::before {
+    content: ''; flex-shrink: 0;
+    width: 5px; height: 9px;
+    border-right: 1.5px solid var(--accent);
+    border-bottom: 1.5px solid var(--accent);
+    transform: rotate(45deg);
+    margin-top: 4px;
+  }
+
+  .process-list { display: flex; flex-direction: column; gap: 20px; }
+  .process-item { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: flex-start; }
+  .process-num { width: 36px; height: 36px; border: 1.5px solid var(--ink); color: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .process-text h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 3px; letter-spacing: -0.3px; }
+  .process-text p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+  .ba-block { margin-top: 8px; }
+  .ba-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .ba-col img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; }
+  .ba-col-label { font-size: 12px; font-weight: 600; color: var(--muted); margin-top: 8px; letter-spacing: 0.05em; }
+  .ba-col-label.after { color: var(--accent); }
+
+  .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .cred-card { background: white; padding: 28px 18px; text-align: center; }
+  .cred-mark { width: 40px; height: 40px; margin: 0 auto 14px; border: 1.5px solid var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: var(--ink); letter-spacing: -0.3px; }
+  .cred-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.3px; }
+  .cred-sub { font-size: 12px; color: var(--muted); line-height: 1.55; }
+
+  .review-list { display: flex; flex-direction: column; }
+  .review-item { padding: 24px 0; border-top: 1px solid var(--line); }
+  .review-item:last-child { border-bottom: 1px solid var(--line); }
+  .review-text { font-size: 15px; color: var(--ink-2); line-height: 1.75; margin-bottom: 14px; letter-spacing: -0.3px; }
+  .review-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+  .review-name { font-weight: 600; color: var(--text); }
+
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-top: 1px solid var(--line); }
+  .faq-item:last-child { border-bottom: 1px solid var(--line); }
+  .faq-q { width: 100%; background: transparent; border: none; padding: 22px 0; text-align: left; font-family: inherit; font-size: 15px; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; letter-spacing: -0.3px; }
+  .faq-arr { width: 18px; height: 18px; border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg); margin-bottom: 4px; transition: transform 0.2s; }
+  .faq-q.open .faq-arr { transform: rotate(-135deg); margin-bottom: -4px; }
+  .faq-a { display: none; padding: 0 0 22px; font-size: 14px; color: var(--text); line-height: 1.8; }
+  .faq-a.open { display: block; }
+
+  .cta-band { background: var(--ink); color: white; padding: 64px 24px; text-align: center; }
+  .cta-band-title { font-size: 24px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.7px; line-height: 1.4; }
+  .cta-band-sub { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 32px; line-height: 1.7; }
+  .cta-tel-large { display: inline-block; font-size: 28px; font-weight: 800; color: white; letter-spacing: -0.5px; padding: 18px 36px; border: 1.5px solid rgba(255,255,255,0.4); border-radius: 8px; }
+
+  .contact-info { background: white; padding: 56px 24px; border-top: 1px solid var(--line); }
+  .contact-row { display: grid; grid-template-columns: 90px 1fr; padding: 16px 0; border-bottom: 1px solid var(--line-2); font-size: 14px; }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row strong { font-weight: 600; color: var(--muted); }
+  .contact-row span { color: var(--ink); font-weight: 500; }
+
+  .bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); max-width: 520px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; background: white; border-top: 1px solid var(--line); z-index: 50; }
+  .bnav-btn { padding: 18px; font-size: 15px; font-weight: 700; text-align: center; letter-spacing: -0.3px; }
+  .bnav-call { background: var(--ink); color: white; }
+  .bnav-kakao { background: white; color: var(--ink); border-left: 1px solid var(--line); }
+</style>
+</head>
+<body>
+
+<div class="demo-bar">
+  <span>사이트온 샘플 · 입주청소 업종</span>
+  <a href="/">← 메인으로</a>
+</div>
+
+<nav class="nav">
+  <div class="nav-brand"><span>•</span> 맑은날 입주청소</div>
+  <a href="tel:010-0000-0000" class="nav-tel">010-0000-0000</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">SEOUL · GYEONGGI</div>
+    <h1>이사한 첫날,<br><strong>맑은 공기</strong>를 선물합니다.</h1>
+    <p class="hero-sub">여성 청소사 2인 1조가 방문합니다.<br>100항목 체크리스트로 빠진 곳 없이.</p>
+    <div class="hero-cta-row">
+      <a href="tel:010-0000-0000" class="btn-primary">전화 견적</a>
+      <a href="#check" class="btn-secondary">체크리스트</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">7<span class="unit">년</span></div><div class="stat-label">청소 경력</div></div>
+  <div class="stat"><div class="stat-num">3,200<span class="unit">+</span></div><div class="stat-label">시공 완료</div></div>
+  <div class="stat"><div class="stat-num">100<span class="unit">항목</span></div><div class="stat-label">체크리스트</div></div>
+</div>
+
+<section class="sec">
+  <div class="sec-eyebrow">Service</div>
+  <h2 class="sec-title">제공 서비스</h2>
+  <p class="sec-lead">이사 전후 청소부터 리모델링 마감 청소까지<br>공간과 상황에 맞춰 진행합니다.</p>
+
+  <div class="service-list">
+    <div class="service-item">
+      <div class="service-info"><h4>입주 청소 (이사 전)</h4><p>빈 집 기준 100항목 풀 클리닝</p></div>
+      <div class="service-price">평당 13,000원<span class="unit">~</span></div>
+    </div>
+    <div class="service-item">
+      <div class="service-info"><h4>이사 청소 (이사 후)</h4><p>가구 배치 후 표면 청소·정리</p></div>
+      <div class="service-price">평당 15,000원<span class="unit">~</span></div>
+    </div>
+    <div class="service-item">
+      <div class="service-info"><h4>리모델링 마감 청소</h4><p>공사 후 페인트·먼지·실리콘 제거</p></div>
+      <div class="service-price">평당 17,000원<span class="unit">~</span></div>
+    </div>
+    <div class="service-item">
+      <div class="service-info"><h4>사무실 · 상가</h4><p>영업 종료 후 야간 시공 가능</p></div>
+      <div class="service-price">현장 견적</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="check">
+  <div class="sec-eyebrow">Checklist</div>
+  <h2 class="sec-title">100항목 체크리스트</h2>
+  <p class="sec-lead">매 시공마다 동일한 기준으로 진행합니다.<br>주요 항목 일부를 공개합니다.</p>
+
+  <div class="check-grid">
+    <div class="check-zone">
+      <h4>주방</h4>
+      <ul>
+        <li>싱크대 내부·외부</li>
+        <li>가스레인지·후드</li>
+        <li>냉장고 자리·벽면</li>
+        <li>씽크볼 물때 제거</li>
+        <li>타일·줄눈 세정</li>
+      </ul>
+    </div>
+    <div class="check-zone">
+      <h4>욕실</h4>
+      <ul>
+        <li>변기·세면대·욕조</li>
+        <li>샤워부스 물때</li>
+        <li>거울·수전 광택</li>
+        <li>타일·실리콘 곰팡이</li>
+        <li>배수구·환풍구</li>
+      </ul>
+    </div>
+    <div class="check-zone">
+      <h4>거실 · 방</h4>
+      <ul>
+        <li>바닥 왁싱·진공</li>
+        <li>창틀·방충망</li>
+        <li>스위치·콘센트</li>
+        <li>벽지 얼룩 닦기</li>
+        <li>붙박이장 내부</li>
+      </ul>
+    </div>
+    <div class="check-zone">
+      <h4>현관 · 베란다</h4>
+      <ul>
+        <li>신발장 내부·외부</li>
+        <li>현관 타일</li>
+        <li>베란다 바닥·배수구</li>
+        <li>샷시·창호 청소</li>
+        <li>난간·벽면</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow">Process</div>
+  <h2 class="sec-title">진행 절차</h2>
+  <p class="sec-lead">상담부터 마무리까지<br>모든 단계를 투명하게 안내해 드립니다.</p>
+
+  <div class="process-list">
+    <div class="process-item"><div class="process-num">1</div>
+      <div class="process-text"><h4>전화·카톡 상담</h4><p>평형, 청소 종류, 희망 일정을 알려주시기 바랍니다.</p></div></div>
+    <div class="process-item"><div class="process-num">2</div>
+      <div class="process-text"><h4>견적 안내</h4><p>평수 기준 정찰제 견적을 즉시 안내해 드립니다.</p></div></div>
+    <div class="process-item"><div class="process-num">3</div>
+      <div class="process-text"><h4>여성 2인 1조 방문</h4><p>약속 시간 정시 방문, 신분증 사전 공유합니다.</p></div></div>
+    <div class="process-item"><div class="process-num">4</div>
+      <div class="process-text"><h4>100항목 체크 시공</h4><p>친환경 세제로 단계별 진행, 평균 5~7시간 소요.</p></div></div>
+    <div class="process-item"><div class="process-num">5</div>
+      <div class="process-text"><h4>최종 점검 및 마감</h4><p>고객 함께 확인 후 잔금 결제로 마무리합니다.</p></div></div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="sec-eyebrow">Before / After</div>
+  <h2 class="sec-title">시공 전·후</h2>
+  <p class="sec-lead">눈에 보이는 변화로 결과를 증명합니다.</p>
+
+  <div class="ba-block">
+    <div class="ba-row">
+      <div class="ba-col"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80" alt=""><div class="ba-col-label">시공 전</div></div>
+      <div class="ba-col"><img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&q=80" alt=""><div class="ba-col-label after">시공 후</div></div>
+    </div>
+  </div>
+  <div class="ba-block" style="margin-top: 16px;">
+    <div class="ba-row">
+      <div class="ba-col"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" alt=""><div class="ba-col-label">시공 전</div></div>
+      <div class="ba-col"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt=""><div class="ba-col-label after">시공 후</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow">Credentials</div>
+  <h2 class="sec-title">맑은날의 약속</h2>
+  <p class="sec-lead">여성 가구·1인 가구도 안심하실 수 있도록<br>모든 청소사는 신원 확인을 거칩니다.</p>
+
+  <div class="cred-grid">
+    <div class="cred-card"><div class="cred-mark">여성</div><div class="cred-name">여성 청소사 2인</div><div class="cred-sub">신분증 사전 공유</div></div>
+    <div class="cred-card"><div class="cred-mark">친환경</div><div class="cred-name">친환경 세제 사용</div><div class="cred-sub">아이·반려동물 안심</div></div>
+    <div class="cred-card"><div class="cred-mark">보험</div><div class="cred-name">시공 책임보험</div><div class="cred-sub">파손 시 전액 보상</div></div>
+    <div class="cred-card"><div class="cred-mark">A/S</div><div class="cred-name">24시간 무상 재청소</div><div class="cred-sub">미흡 시 즉시 재방문</div></div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="sec-eyebrow">Review</div>
+  <h2 class="sec-title">고객 후기</h2>
+  <p class="sec-lead">실제 시공받으신 고객님들의 평가입니다.</p>
+
+  <div class="review-list">
+    <div class="review-item">
+      <p class="review-text">새 집인데 먼지가 너무 많아 걱정했는데, 5시간 동안 정말 꼼꼼하게 청소해 주셨습니다. 아이가 안심하고 바닥에 누울 수 있게 됐어요.</p>
+      <div class="review-meta"><span class="review-name">박○○ 고객님 · 동작구</span><span>2025. 07</span></div>
+    </div>
+    <div class="review-item">
+      <p class="review-text">사장님 두 분이 너무 친절하셨고, 체크리스트 보여주시면서 진행 과정을 설명해 주셔서 신뢰가 갔습니다.</p>
+      <div class="review-meta"><span class="review-name">이○○ 고객님 · 영등포구</span><span>2025. 06</span></div>
+    </div>
+    <div class="review-item">
+      <p class="review-text">리모델링 후 페인트 자국이 곳곳에 있었는데, 마감 청소로 완전히 제거됐습니다. 가격도 정확하고 추가 비용 없었습니다.</p>
+      <div class="review-meta"><span class="review-name">최○○ 고객님 · 분당</span><span>2025. 05</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow">FAQ</div>
+  <h2 class="sec-title">자주 묻는 질문</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">청소 시간은 얼마나 소요되나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">24평 기준 5~7시간 정도 소요됩니다. 평형과 상태에 따라 차이가 있을 수 있습니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">청소 중 자리를 비워도 되나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">가능합니다. 다만 마무리 시점에는 함께 확인하시는 것을 권장드립니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">세제는 어떤 것을 사용하나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">KC 인증 친환경 세제만 사용합니다. 아이·반려동물이 있는 가정도 안심하실 수 있습니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">청소 후 미흡한 부분이 있으면 어떻게 되나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">24시간 이내 알려주시면 즉시 재방문하여 무상으로 재청소해 드립니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">출장 가능 지역이 어디까지인가요?<span class="faq-arr"></span></button>
+      <div class="faq-a">서울 전 지역과 경기 분당·일산·용인까지 출장 가능합니다.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h3 class="cta-band-title">이사한 첫날을<br>맑은 공기로 시작하세요.</h3>
+  <p class="cta-band-sub">평형 알려주시면 즉시 견적 안내<br>편하신 시간에 연락 주십시오.</p>
+  <a href="tel:010-0000-0000" class="cta-tel-large">010-0000-0000</a>
+</section>
+
+<section class="contact-info">
+  <div class="contact-row"><strong>운영</strong><span>맑은날 입주청소 · 이맑은</span></div>
+  <div class="contact-row"><strong>전화</strong><span>010-0000-0000</span></div>
+  <div class="contact-row"><strong>운영시간</strong><span>평일·주말 08:00 - 20:00</span></div>
+  <div class="contact-row"><strong>출장지역</strong><span>서울 · 경기 전 지역</span></div>
+  <div class="contact-row"><strong>주소</strong><span>서울 동작구 ○○로 ○○</span></div>
+</section>
+
+<div class="bottom-nav">
+  <a href="tel:010-0000-0000" class="bnav-btn bnav-call">전화 상담</a>
+  <a href="https://open.kakao.com/o/sXXXXXXX" class="bnav-btn bnav-kakao">카톡 문의</a>
+</div>
+
+<script>
+function faq(btn) {
+  const a = btn.nextElementSibling;
+  const wasOpen = a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(x => x.classList.remove('open'));
+  if (!wasOpen) { a.classList.add('open'); btn.classList.add('open'); }
+}
+</script>
+</body>
+</html>
