@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디테일타일 | 줄눈·타일 시공 전문</title>
+<meta name="description" content="욕실·주방 줄눈 시공 전문. 곰팡이 잡고 디테일까지 챙기는 프리미엄 시공.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --brand: #0066CC;
+  --brand-dark: #004A99;
+  --brand-soft: #E6F0FA;
+  --text: #0A1929;
+  --sub: #5A6B7C;
+  --line: #E1E7EE;
+  --bg: #F5F8FB;
+  --white: #fff;
+}
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  padding-bottom: 72px;
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 520px;
+  margin: 0 auto;
+  letter-spacing: -0.3px;
+}
+
+.demo-bar {
+  background: #0A1929; color: white;
+  padding: 8px 16px; font-size: 12px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.demo-bar a { color: #93C5FD; text-decoration: none; font-weight: 600; }
+
+/* TOP */
+.topbar {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 18px 22px; border-bottom: 1px solid var(--line);
+  background: var(--white);
+}
+.topbar-logo {
+  width: 28px; height: 28px;
+  background: var(--brand); border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 800; font-size: 14px;
+}
+.topbar-name { font-weight: 700; font-size: 16px; color: var(--brand); letter-spacing: -0.5px; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  color: white; padding: 48px 22px 56px;
+  text-align: left; position: relative; overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -80px; bottom: -80px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.hero-eyebrow {
+  display: inline-block;
+  background: rgba(255,255,255,0.18);
+  padding: 6px 14px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: 30px; font-weight: 800;
+  line-height: 1.3; margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+.hero h1 strong { color: #BFDBFE; font-weight: 800; }
+.hero p { font-size: 14px; opacity: 0.9; margin-bottom: 22px; line-height: 1.7; }
+.hero-tel {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: white; color: var(--brand);
+  font-weight: 800; font-size: 17px;
+  padding: 13px 22px; border-radius: 8px;
+  text-decoration: none; letter-spacing: -0.5px;
+  position: relative; z-index: 1;
+}
+
+/* HERO IMAGE */
+.hero-img {
+  width: 100%; height: 220px; object-fit: cover; display: block;
+}
+
+/* SECTION */
+.section { padding: 44px 22px; }
+.section-label {
+  font-size: 11px; font-weight: 700;
+  color: var(--brand); letter-spacing: 0.2em;
+  margin-bottom: 8px; text-transform: uppercase;
+}
+.section-title {
+  font-size: 22px; font-weight: 800;
+  margin-bottom: 6px; line-height: 1.4;
+  letter-spacing: -0.7px;
+}
+.section-sub { font-size: 13px; color: var(--sub); margin-bottom: 24px; }
+.divider { height: 8px; background: var(--bg); }
+
+/* SERVICE */
+.service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.scard {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: 12px; overflow: hidden;
+  transition: transform 0.15s;
+}
+.scard img { width: 100%; height: 110px; object-fit: cover; display: block; }
+.scard-body { padding: 14px; }
+.scard-name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.scard-desc { font-size: 12px; color: var(--sub); line-height: 1.55; margin-bottom: 8px; }
+.scard-price {
+  font-size: 13px; font-weight: 700; color: var(--brand);
+  padding-top: 8px; border-top: 1px solid var(--line);
+}
+
+/* BEFORE/AFTER */
+.ba { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+.ba-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--line); }
+.ba-col img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.ba-col-label {
+  padding: 10px; font-size: 12px; font-weight: 700;
+  text-align: center; background: var(--white);
+}
+.ba-col:first-child .ba-col-label { color: #B91C1C; }
+.ba-col:last-child .ba-col-label { color: var(--brand); }
+
+/* WHY */
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.why-card {
+  background: var(--brand-soft);
+  border-radius: 12px; padding: 18px 14px;
+  text-align: center;
+}
+.why-icon {
+  width: 44px; height: 44px;
+  background: var(--brand); color: white;
+  border-radius: 10px; margin: 0 auto 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 700;
+}
+.why-name { font-size: 13px; font-weight: 700; color: var(--brand-dark); }
+.why-sub { font-size: 11px; color: #486890; margin-top: 4px; line-height: 1.5; }
+
+/* PROCESS */
+.process-grid { display: flex; flex-direction: column; }
+.prow {
+  display: flex; gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: flex-start;
+}
+.prow:last-child { border-bottom: none; }
+.pnum {
+  width: 34px; height: 34px;
+  background: var(--brand); color: white;
+  border-radius: 8px; display: flex;
+  align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 800; flex-shrink: 0;
+}
+.ptext h4 { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.ptext p { font-size: 12px; color: var(--sub); }
+
+/* PRICE TABLE */
+.price-card {
+  border: 2px solid var(--brand); border-radius: 14px;
+  padding: 24px; background: white;
+}
+.price-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0; border-bottom: 1px dashed var(--line);
+  font-size: 14px;
+}
+.price-row:last-child { border-bottom: none; padding-bottom: 0; }
+.price-row strong { color: var(--brand); font-weight: 800; }
+.price-note {
+  margin-top: 16px; padding: 12px;
+  background: var(--brand-soft); border-radius: 8px;
+  font-size: 12px; color: var(--brand-dark);
+}
+
+/* REVIEW */
+.review-list { display: flex; flex-direction: column; gap: 12px; }
+.rcard {
+  background: var(--bg); border-radius: 12px;
+  padding: 16px; border: 1px solid var(--line);
+}
+.rcard-top { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.rname { font-size: 13px; font-weight: 700; }
+.rstars { color: #FBBF24; font-size: 12px; letter-spacing: 1px; }
+.rtext { font-size: 13px; color: #2A4060; line-height: 1.7; }
+.rdate { font-size: 11px; color: var(--sub); margin-top: 6px; }
+
+/* FAQ */
+.faq { display: flex; flex-direction: column; gap: 8px; }
+.faq-item { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: white; }
+.faq-q {
+  width: 100%; background: white; border: none;
+  padding: 16px; text-align: left;
+  font-family: inherit; font-size: 14px; font-weight: 600;
+  color: var(--text); cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.faq-q.open { color: var(--brand); }
+.faq-arr { transition: transform 0.2s; }
+.faq-q.open .faq-arr { transform: rotate(180deg); }
+.faq-a { display: none; padding: 0 16px 16px; font-size: 13px; color: var(--sub); line-height: 1.75; }
+.faq-a.open { display: block; }
+
+/* CONTACT */
+.contact {
+  background: var(--brand-dark);
+  color: white; padding: 36px 22px;
+}
+.contact h3 { font-size: 22px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.7px; }
+.contact p { font-size: 13px; opacity: 0.85; margin-bottom: 24px; }
+.contact-info { font-size: 14px; }
+.contact-info-row {
+  padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.15);
+  display: flex; gap: 16px;
+}
+.contact-info-row:first-child { border-top: none; }
+.contact-info-row strong { color: #93C5FD; font-weight: 600; min-width: 70px; }
+
+/* BOTTOM NAV */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+  max-width: 520px; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr;
+  background: white; z-index: 99;
+  border-top: 1px solid var(--line);
+}
+.bnav-btn {
+  display: flex; align-items: center; justify-content: center;
+  gap: 6px; padding: 16px; font-family: inherit;
+  font-size: 15px; font-weight: 700;
+  border: none; cursor: pointer; text-decoration: none;
+}
+.bnav-call { background: var(--brand); color: white; }
+.bnav-kakao { background: #FEE500; color: #3B1F00; }
+</style>
+</head>
+<body>
+
+<div class="demo-bar">
+  <span>📦 사이트온 샘플 · 줄눈/타일 시공 업종</span>
+  <a href="/">← 메인으로</a>
+</div>
+
+<div class="topbar">
+  <div class="topbar-logo">T</div>
+  <div class="topbar-name">디테일타일</div>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">프리미엄 줄눈 시공 전문</div>
+  <h1>공간의 품격은<br><strong>디테일</strong>에서 완성됩니다</h1>
+  <p>욕실·주방·발코니 줄눈 시공<br>곰팡이 잡고, 한 줄도 어긋남 없이</p>
+  <a href="tel:010-0000-0000" class="hero-tel">📞 010-0000-0000</a>
+</div>
+
+<img class="hero-img" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80" alt="줄눈 시공">
+
+<div class="section">
+  <div class="section-label">Service</div>
+  <div class="section-title">시공 서비스</div>
+  <div class="section-sub">욕실·주방을 비롯한 다양한 공간 전문</div>
+  <div class="service-grid">
+    <div class="scard">
+      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="">
+      <div class="scard-body">
+        <div class="scard-name">욕실 줄눈</div>
+        <div class="scard-desc">곰팡이 완전 제거 후 신규 시공</div>
+        <div class="scard-price">평당 4만원~</div>
+      </div>
+    </div>
+    <div class="scard">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80" alt="">
+      <div class="scard-body">
+        <div class="scard-name">주방 줄눈</div>
+        <div class="scard-desc">유분·오염에 강한 고급 사재</div>
+        <div class="scard-price">평당 5만원~</div>
+      </div>
+    </div>
+    <div class="scard">
+      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80" alt="">
+      <div class="scard-body">
+        <div class="scard-name">타일 보수</div>
+        <div class="scard-desc">깨진 타일 부분 교체</div>
+        <div class="scard-price">개당 3만원~</div>
+      </div>
+    </div>
+    <div class="scard">
+      <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=400&q=80" alt="">
+      <div class="scard-body">
+        <div class="scard-name">발코니/베란다</div>
+        <div class="scard-desc">방수 처리까지 한 번에</div>
+        <div class="scard-price">견적 후 안내</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">Before / After</div>
+  <div class="section-title">시공 전·후</div>
+  <div class="section-sub">검은 곰팡이 자국, 완전히 사라집니다</div>
+  <div class="ba">
+    <div class="ba-row">
+      <div class="ba-col">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&q=80" alt="">
+        <div class="ba-col-label">BEFORE</div>
+      </div>
+      <div class="ba-col">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="">
+        <div class="ba-col-label">AFTER</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">Why Us</div>
+  <div class="section-title">디테일타일의 약속</div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">★</div>
+      <div class="why-name">10년 경력 기술자</div>
+      <div class="why-sub">대표 직접 시공</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">✓</div>
+      <div class="why-name">정직한 견적</div>
+      <div class="why-sub">추가 비용 없음</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">⌂</div>
+      <div class="why-name">고급 사재 사용</div>
+      <div class="why-sub">에폭시 줄눈제</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">⚑</div>
+      <div class="why-name">3년 무상 AS</div>
+      <div class="why-sub">변색·균열 보장</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">Process</div>
+  <div class="section-title">시공 절차</div>
+  <div class="process-grid">
+    <div class="prow"><div class="pnum">1</div><div class="ptext"><h4>전화·카톡 상담</h4><p>공간 크기와 시공 범위를 알려주세요</p></div></div>
+    <div class="prow"><div class="pnum">2</div><div class="ptext"><h4>방문 견적</h4><p>사진으로 1차 견적 후 방문 실측</p></div></div>
+    <div class="prow"><div class="pnum">3</div><div class="ptext"><h4>기존 줄눈 제거</h4><p>곰팡이·이물질 완벽 제거</p></div></div>
+    <div class="prow"><div class="pnum">4</div><div class="ptext"><h4>신규 줄눈 시공</h4><p>고급 에폭시 줄눈제로 균일 시공</p></div></div>
+    <div class="prow"><div class="pnum">5</div><div class="ptext"><h4>마감 점검</h4><p>고객 확인 후 결제, 3년 AS 보장</p></div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">Price</div>
+  <div class="section-title">가격 안내</div>
+  <div class="section-sub">기본 시공 기준, 실측 후 정식 견적</div>
+  <div class="price-card">
+    <div class="price-row"><span>욕실 줄눈 (1.5평)</span><strong>15만원~</strong></div>
+    <div class="price-row"><span>주방 줄눈 (싱크대 주변)</span><strong>12만원~</strong></div>
+    <div class="price-row"><span>전체 욕실 (4평)</span><strong>28만원~</strong></div>
+    <div class="price-row"><span>타일 부분 교체</span><strong>개당 3만원~</strong></div>
+    <div class="price-note">※ 출장비 포함. 자재 등급에 따라 변동될 수 있습니다.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">Review</div>
+  <div class="section-title">고객 후기</div>
+  <div class="review-list">
+    <div class="rcard"><div class="rcard-top"><div class="rname">강○○ 고객님 (마포구)</div><div class="rstars">★★★★★</div></div><div class="rtext">10년 된 욕실 줄눈이 정말 새것처럼 변했어요. 검은 곰팡이 자국이 거짓말처럼 사라졌습니다.</div><div class="rdate">2025년 4월</div></div>
+    <div class="rcard"><div class="rcard-top"><div class="rname">서○○ 고객님 (강서구)</div><div class="rstars">★★★★★</div></div><div class="rtext">주방 싱크대 주변 줄눈 시공 받았는데, 일직선으로 한 줄도 어긋남 없이 깔끔합니다. 만족!</div><div class="rdate">2025년 3월</div></div>
+    <div class="rcard"><div class="rcard-top"><div class="rname">한○○ 고객님 (성동구)</div><div class="rstars">★★★★★</div></div><div class="rtext">견적부터 시공까지 정직하고 빠르게 진행됐어요. 추가 비용 없이 견적대로 마무리.</div><div class="rdate">2025년 2월</div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">FAQ</div>
+  <div class="section-title">자주 묻는 질문</div>
+  <div class="faq">
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">시공 시간은 얼마나 걸리나요?<span class="faq-arr">▾</span></button><div class="faq-a">욕실 1개 기준 3~5시간 정도 소요됩니다. 당일 시공·당일 사용 가능.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">시공 당일 사용 가능한가요?<span class="faq-arr">▾</span></button><div class="faq-a">에폭시 줄눈제는 24시간 후 사용을 권장합니다.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">기존 줄눈은 다 뜯어야 하나요?<span class="faq-arr">▾</span></button><div class="faq-a">네, 기존 줄눈을 완전히 제거 후 신규 시공해야 변색·곰팡이가 다시 생기지 않습니다.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">AS는 어떻게 되나요?<span class="faq-arr">▾</span></button><div class="faq-a">시공 후 3년 이내 변색·균열·들뜸 발생 시 무상 보수해드립니다.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">출장 지역이 어디까지인가요?<span class="faq-arr">▾</span></button><div class="faq-a">서울 전 지역 출장 무료. 경기 지역은 별도 출장비 안내드립니다.</div></div>
+  </div>
+</div>
+
+<div class="contact">
+  <h3>지금 상담하세요</h3>
+  <p>욕실의 디테일, 디테일타일이 책임집니다</p>
+  <div class="contact-info">
+    <div class="contact-info-row"><strong>대표</strong><span>디테일타일 박정한</span></div>
+    <div class="contact-info-row"><strong>전화</strong><span>010-0000-0000</span></div>
+    <div class="contact-info-row"><strong>운영시간</strong><span>평일·주말 08:00 - 20:00</span></div>
+    <div class="contact-info-row"><strong>지역</strong><span>서울 전 지역 / 경기 일부</span></div>
+  </div>
+</div>
+
+<div class="bottom-nav">
+  <a href="tel:010-0000-0000" class="bnav-btn bnav-call">📞 전화 연결</a>
+  <a href="https://open.kakao.com/o/sXXXXXXX" class="bnav-btn bnav-kakao">💬 카톡 문의</a>
+</div>
+
+<script>
+function faq(btn) {
+  const a = btn.nextElementSibling;
+  const open = a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(x => x.classList.remove('open'));
+  if (!open) { a.classList.add('open'); btn.classList.add('open'); }
+}
+</script>
+</body>
+</html>

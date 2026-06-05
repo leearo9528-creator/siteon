@@ -1,524 +1,510 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>쾌적에어텍 | 에어컨 청소·설치 전문</title>
-<meta name="description" content="15년 경력 전문 기사. 당일 출장 가능. 가정용·상업용 에어컨 청소·설치·수리 전문.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>사이트온 · 사장님 홈페이지 29만원</title>
+<meta name="description" content="1인 사장님을 위한 원페이지 홈페이지. 업종별 템플릿 29만원. 사진·예약·FAQ까지 다 들어있습니다." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --blue: #3182f6;
+    --blue-strong: #1b64da;
+    --blue-soft: #e8f3ff;
+    --bg: #f4f6f8;
+    --surface: #ffffff;
+    --text: #15191f;
+    --text-2: #424b56;
+    --text-3: #7a8591;
+    --line: #eef0f3;
+    --line-2: #e1e5ea;
+    --radius: 18px;
+    --radius-lg: 22px;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.3px;
+    font-size: 17px;
+  }
+  body { padding-bottom: 104px; }
+  .wrap { max-width: 520px; margin: 0 auto; background: var(--bg); }
+  .container { padding: 0 22px; }
+  a { color: inherit; text-decoration: none; }
 
-:root {
-  --blue: #1A56FF;
-  --blue-light: #EEF2FF;
-  --text: #111827;
-  --sub: #6B7280;
-  --border: #E5E7EB;
-  --bg: #F9FAFB;
-  --white: #fff;
-  --r: 12px;
-}
+  /* Top bar */
+  .topbar {
+    background: var(--surface);
+    padding: 18px 22px;
+    font-weight: 700;
+    font-size: 18px;
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center;
+  }
+  .topbar .logo-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    background: var(--blue);
+    border-radius: 50%;
+    margin-right: 9px;
+  }
+  .topbar .brand-sub {
+    margin-left: auto; font-size: 13px;
+    color: var(--text-3); font-weight: 500;
+  }
 
-body {
-  font-family: 'Noto Sans KR', sans-serif;
-  color: var(--text);
-  background: var(--white);
-  padding-bottom: 72px;
-  font-size: 14px;
-  line-height: 1.6;
-}
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    padding: 56px 22px 64px;
+  }
+  .hero .eyebrow {
+    display: inline-block;
+    background: var(--blue-soft);
+    color: var(--blue);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.32;
+    letter-spacing: -1px;
+    margin: 0 0 18px;
+  }
+  .hero h1 strong { color: var(--blue); }
+  .hero .lead {
+    font-size: 16px;
+    color: var(--text-2);
+    margin: 0 0 28px;
+    line-height: 1.65;
+  }
+  .price-pill {
+    display: inline-flex; align-items: baseline; gap: 6px;
+    background: #0e1217; color: white;
+    padding: 14px 20px; border-radius: 12px;
+    font-weight: 800;
+  }
+  .price-pill .num { font-size: 24px; }
+  .price-pill .unit { font-size: 14px; opacity: 0.7; font-weight: 600; }
 
-/* ── HERO ── */
-.hero {
-  position: relative;
-  height: 300px;
-  overflow: hidden;
-}
-.hero img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 24px 20px;
-  color: white;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: rgba(255,255,255,0.18);
-  border: 1px solid rgba(255,255,255,0.35);
-  border-radius: 999px;
-  padding: 4px 12px;
-  font-size: 12px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  width: fit-content;
-}
-.hero h1 {
-  font-size: 26px;
-  font-weight: 900;
-  line-height: 1.25;
-  margin-bottom: 6px;
-}
-.hero p {
-  font-size: 13px;
-  opacity: 0.85;
-  margin-bottom: 16px;
-}
-.hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: white;
-  color: var(--blue);
-  font-weight: 700;
-  font-size: 15px;
-  padding: 12px 24px;
-  border-radius: 999px;
-  text-decoration: none;
-  width: fit-content;
-}
+  /* Section */
+  section { background: var(--surface); }
+  .sec-gap { height: 10px; background: var(--bg); }
+  .sec {
+    padding: 48px 22px;
+  }
+  .sec-label {
+    font-size: 12px; font-weight: 800;
+    color: var(--blue); letter-spacing: 0.12em;
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .sec-title {
+    font-size: 24px; font-weight: 800;
+    line-height: 1.35; letter-spacing: -0.7px;
+    margin: 0 0 8px;
+  }
+  .sec-sub {
+    font-size: 15px; color: var(--text-2);
+    margin: 0 0 28px;
+  }
 
-/* ── STATS ── */
-.stats-bar {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background: var(--blue);
-  color: white;
-}
-.stat-item {
-  padding: 16px 0;
-  text-align: center;
-  border-right: 1px solid rgba(255,255,255,0.2);
-}
-.stat-item:last-child { border-right: none; }
-.stat-num { font-size: 20px; font-weight: 900; }
-.stat-label { font-size: 11px; opacity: 0.75; margin-top: 2px; }
+  /* Portfolio cards */
+  .pf-list { display: flex; flex-direction: column; gap: 16px; }
+  .pf-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: block;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .pf-card:active { transform: scale(0.99); }
+  .pf-thumb {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    background: var(--bg);
+    overflow: hidden;
+  }
+  .pf-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pf-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: rgba(15,18,23,0.85); color: white;
+    padding: 5px 10px; border-radius: 6px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .pf-body { padding: 18px 18px 20px; }
+  .pf-name { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+  .pf-desc { font-size: 14px; color: var(--text-2); margin-bottom: 14px; line-height: 1.6; }
+  .pf-foot {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 14px; border-top: 1px solid var(--line);
+  }
+  .pf-price {
+    font-size: 18px; font-weight: 800; color: var(--text);
+  }
+  .pf-price .won { color: var(--blue); }
+  .pf-cta {
+    display: inline-flex; align-items: center; gap: 4px;
+    color: var(--blue); font-weight: 700; font-size: 14px;
+  }
 
-/* ── NOTICE ── */
-.notice {
-  background: #FFF8E7;
-  border-bottom: 1px solid #FDE68A;
-  padding: 12px 20px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #92400E;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.notice-dot {
-  width: 7px; height: 7px;
-  background: #F59E0B;
-  border-radius: 50%;
-  flex-shrink: 0;
-  animation: blink 1.4s infinite;
-}
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+  /* Features list */
+  .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .feat {
+    background: var(--bg);
+    border-radius: 14px;
+    padding: 18px 14px;
+  }
+  .feat-icon {
+    width: 36px; height: 36px;
+    background: var(--blue);
+    color: white;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .feat-name { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+  .feat-sub { font-size: 12px; color: var(--text-3); line-height: 1.5; }
 
-/* ── SECTION ── */
-.section { padding: 32px 20px; }
-.section + .section { padding-top: 0; }
-.section-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--blue);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-.section-title {
-  font-size: 20px;
-  font-weight: 900;
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
+  /* Why */
+  .why-list { display: flex; flex-direction: column; gap: 20px; }
+  .why-row { display: flex; gap: 16px; align-items: flex-start; }
+  .why-num {
+    font-size: 18px; font-weight: 800;
+    color: var(--blue); width: 36px;
+    flex-shrink: 0;
+  }
+  .why-text h4 { margin: 0 0 4px; font-size: 16px; font-weight: 700; }
+  .why-text p { margin: 0; font-size: 14px; color: var(--text-2); line-height: 1.65; }
 
-.divider { height: 8px; background: var(--bg); }
+  /* Compare table */
+  .compare {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .compare-row {
+    display: grid; grid-template-columns: 1.3fr 1fr 1fr;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-row > div {
+    padding: 14px 12px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .compare-row > div:first-child {
+    justify-content: flex-start; text-align: left;
+    font-weight: 700; background: var(--bg);
+  }
+  .compare-row.head > div { background: #0e1217; color: white; font-weight: 700; font-size: 12px; }
+  .compare-row.head > div:first-child { background: #0e1217; }
+  .compare .ours { color: var(--blue); font-weight: 700; }
+  .compare .theirs { color: var(--text-3); }
 
-/* ── SERVICE ── */
-.service-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.scard {
-  border-radius: var(--r);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: var(--white);
-}
-.scard img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  display: block;
-}
-.scard-body {
-  padding: 12px 14px 14px;
-}
-.scard-name {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 3px;
-}
-.scard-desc {
-  font-size: 12px;
-  color: var(--sub);
-  line-height: 1.5;
-}
-.scard-price {
-  margin-top: 8px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--blue);
-}
+  /* Process */
+  .process { display: flex; flex-direction: column; gap: 0; }
+  .pr-row {
+    display: flex; gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: flex-start;
+  }
+  .pr-row:last-child { border-bottom: none; }
+  .pr-num {
+    width: 32px; height: 32px;
+    background: var(--blue); color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800; flex-shrink: 0;
+  }
+  .pr-text h4 { margin: 0 0 3px; font-size: 15px; font-weight: 700; }
+  .pr-text p { margin: 0; font-size: 13px; color: var(--text-2); }
 
-/* ── BEFORE AFTER ── */
-.ba {
-  border-radius: var(--r);
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-.ba-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.ba-col img {
-  width: 100%; height: 140px;
-  object-fit: cover; display: block;
-}
-.ba-col-label {
-  padding: 10px 12px;
-  font-size: 13px;
-  font-weight: 700;
-  text-align: center;
-}
-.ba-col:first-child { border-right: 2px solid white; }
-.ba-col:first-child .ba-col-label { background: #FEE2E2; color: #B91C1C; }
-.ba-col:last-child .ba-col-label { background: #DCFCE7; color: #15803D; }
+  /* FAQ */
+  .faq { display: flex; flex-direction: column; gap: 10px; }
+  .faq-item { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: white; }
+  .faq-q {
+    width: 100%; background: white; border: none;
+    padding: 16px; text-align: left;
+    font-family: inherit; font-size: 15px; font-weight: 700;
+    color: var(--text); cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-q.open { color: var(--blue); }
+  .faq-arr { transition: transform 0.2s; }
+  .faq-q.open .faq-arr { transform: rotate(180deg); }
+  .faq-a { display: none; padding: 0 16px 16px; font-size: 14px; color: var(--text-2); line-height: 1.75; }
+  .faq-a.open { display: block; }
 
-/* ── TRUST ── */
-.trust-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.trust-card {
-  background: var(--blue-light);
-  border-radius: var(--r);
-  padding: 16px 14px;
-  text-align: center;
-}
-.trust-icon { font-size: 22px; margin-bottom: 6px; }
-.trust-name { font-size: 13px; font-weight: 700; color: #1E3A8A; }
-.trust-sub { font-size: 11px; color: #3B5EA6; margin-top: 2px; }
+  /* CTA section */
+  .cta-final {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-strong) 100%);
+    color: white; padding: 56px 22px; text-align: center;
+  }
+  .cta-final h3 { font-size: 26px; font-weight: 800; margin: 0 0 12px; letter-spacing: -0.7px; }
+  .cta-final p { font-size: 15px; opacity: 0.9; margin: 0 0 28px; }
+  .cta-btn {
+    display: inline-block; background: white; color: var(--blue);
+    padding: 16px 32px; border-radius: 999px;
+    font-weight: 800; font-size: 16px; text-decoration: none;
+  }
 
-/* ── PROCESS ── */
-.process { display: flex; flex-direction: column; }
-.prow {
-  display: flex;
-  gap: 14px;
-  padding: 14px 0;
-  border-bottom: 1px solid #F3F4F6;
-  align-items: flex-start;
-}
-.prow:last-child { border-bottom: none; }
-.pnum {
-  width: 32px; height: 32px;
-  background: var(--blue);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 900;
-  flex-shrink: 0;
-}
-.ptext h4 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
-.ptext p { font-size: 12px; color: var(--sub); }
+  /* Footer */
+  .footer {
+    background: #0e1217; color: #8a929c;
+    padding: 32px 22px 40px; font-size: 12px; line-height: 1.7;
+  }
+  .footer .fbrand { color: white; font-weight: 700; font-size: 15px; margin-bottom: 10px; }
 
-/* ── REVIEWS ── */
-.review-list { display: flex; flex-direction: column; gap: 10px; }
-.rcard {
-  background: var(--bg);
-  border-radius: var(--r);
-  padding: 16px;
-  border: 1px solid var(--border);
-}
-.rcard-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-.rname { font-size: 13px; font-weight: 700; }
-.rstars { color: #FBBF24; font-size: 12px; letter-spacing: 1px; }
-.rtext { font-size: 13px; color: #374151; line-height: 1.65; }
-.rdate { font-size: 11px; color: var(--sub); margin-top: 6px; }
-
-/* ── FAQ ── */
-.faq { display: flex; flex-direction: column; gap: 8px; }
-.faq-item { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
-.faq-q {
-  width: 100%; background: white; border: none;
-  padding: 14px 16px;
-  text-align: left;
-  font-family: inherit;
-  font-size: 14px; font-weight: 600;
-  color: var(--text);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-}
-.faq-q.open { color: var(--blue); }
-.faq-arr { font-size: 16px; transition: transform 0.2s; flex-shrink: 0; }
-.faq-q.open .faq-arr { transform: rotate(180deg); }
-.faq-a {
-  display: none;
-  padding: 0 16px 14px;
-  font-size: 13px;
-  color: #374151;
-  line-height: 1.7;
-  background: #FAFAFA;
-}
-.faq-a.open { display: block; }
-
-/* ── BOTTOM NAV ── */
-.bottom-nav {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--border);
-  background: white;
-  z-index: 99;
-}
-.bnav-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 15px;
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-}
-.bnav-call { background: var(--blue); color: white; }
-.bnav-kakao { background: #FEE500; color: #3B1F00; }
+  /* Bottom nav */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+    max-width: 520px; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: white; z-index: 99;
+    border-top: 1px solid var(--line);
+  }
+  .bnav-btn {
+    display: flex; align-items: center; justify-content: center;
+    gap: 6px; padding: 18px; font-family: inherit;
+    font-size: 15px; font-weight: 800;
+    border: none; cursor: pointer; text-decoration: none;
+  }
+  .bnav-main { background: var(--blue); color: white; }
+  .bnav-kakao { background: #FEE500; color: #3B1F00; }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<!-- HERO -->
-<div class="hero">
-  <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" alt="에어컨 청소">
-  <div class="hero-overlay">
-    <div class="hero-badge">📍 대구·경북 당일 출장</div>
-    <h1>에어컨, 제대로<br>한 번만 청소하세요</h1>
-    <p>15년 경력 전문 기사가 직접 방문 · 냄새·곰팡이 완전 제거 보장</p>
-    <a href="tel:010-0000-0000" class="hero-cta">📞 지금 바로 전화</a>
-  </div>
+<div class="topbar">
+  <span class="logo-dot"></span>사이트온
+  <span class="brand-sub">siteon</span>
 </div>
 
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-num">15년</div>
-    <div class="stat-label">전문 경력</div>
+<section class="hero">
+  <div class="eyebrow">1인 사장님 전용</div>
+  <h1>사장님 홈페이지<br><strong>29만원</strong>으로 끝.</h1>
+  <p class="lead">
+    에어컨 청소·도배·타일 같은 1인 사장님을 위한<br>
+    원페이지 홈페이지. 만들면 바로 손님 받습니다.
+  </p>
+  <div class="price-pill">
+    <span class="num">₩290,000</span><span class="unit">/ VAT 별도</span>
   </div>
-  <div class="stat-item">
-    <div class="stat-num">2,400+</div>
-    <div class="stat-label">누적 청소</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">4.9 ★</div>
-    <div class="stat-label">고객 평점</div>
-  </div>
-</div>
+</section>
 
-<!-- NOTICE -->
-<div class="notice">
-  <div class="notice-dot"></div>
-  ☀️ 여름 시즌 예약 폭주 중 — 지금 날짜 잡으세요
-</div>
+<div class="sec-gap"></div>
 
-<!-- SERVICE -->
-<div class="section">
-  <div class="section-label">SERVICE</div>
-  <div class="section-title">제공 서비스</div>
-  <div class="service-grid">
-    <div class="scard">
-      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&q=80" alt="벽걸이 청소">
-      <div class="scard-body">
-        <div class="scard-name">벽걸이 청소</div>
-        <div class="scard-desc">분해세척 + 항균코팅 포함</div>
-        <div class="scard-price">5만원~</div>
+<section class="sec">
+  <div class="sec-label">Portfolio</div>
+  <h2 class="sec-title">샘플 보기</h2>
+  <p class="sec-sub">실제 사장님께 만들어드린 그대로의 톤·구성입니다. 카드를 눌러 확인하세요.</p>
+
+  <div class="pf-list">
+    <a href="/portfolio/aircon.html" class="pf-card">
+      <div class="pf-thumb">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" alt="에어컨 청소 샘플">
+        <span class="pf-badge">에어컨 청소</span>
+      </div>
+      <div class="pf-body">
+        <div class="pf-name">쾌적에어텍</div>
+        <div class="pf-desc">분해 청소·설치·가스충전을 다루는 전문 기사님 톤. 신뢰감 강조형.</div>
+        <div class="pf-foot">
+          <div class="pf-price"><span class="won">29만원</span></div>
+          <div class="pf-cta">샘플 보기 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="/portfolio/wallpaper.html" class="pf-card">
+      <div class="pf-thumb">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="도배 인테리어 샘플">
+        <span class="pf-badge">도배 / 인테리어</span>
+      </div>
+      <div class="pf-body">
+        <div class="pf-name">한울도배 인테리어</div>
+        <div class="pf-desc">20년 장인 톤. 따뜻한 베이지·우드, 프리미엄 인테리어 분위기.</div>
+        <div class="pf-foot">
+          <div class="pf-price"><span class="won">29만원</span></div>
+          <div class="pf-cta">샘플 보기 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="/portfolio/tile.html" class="pf-card">
+      <div class="pf-thumb">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80" alt="타일 줄눈 샘플">
+        <span class="pf-badge">타일 / 줄눈</span>
+      </div>
+      <div class="pf-body">
+        <div class="pf-name">디테일타일</div>
+        <div class="pf-desc">욕실·주방 줄눈 시공. 깔끔한 블루 톤, 가격표까지 정직하게.</div>
+        <div class="pf-foot">
+          <div class="pf-price"><span class="won">29만원</span></div>
+          <div class="pf-cta">샘플 보기 →</div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<div class="sec-gap"></div>
+
+<section class="sec">
+  <div class="sec-label">Features</div>
+  <h2 class="sec-title">홈페이지 안에 들어가는 것</h2>
+  <p class="sec-sub">손님이 전화 걸기까지 필요한 모든 게 한 페이지에 있습니다.</p>
+  <div class="feat-grid">
+    <div class="feat"><div class="feat-icon">📸</div><div class="feat-name">시공·매장 사진</div><div class="feat-sub">갤러리 + 비포/애프터</div></div>
+    <div class="feat"><div class="feat-icon">🏪</div><div class="feat-name">업장 소개</div><div class="feat-sub">대표·경력·강점</div></div>
+    <div class="feat"><div class="feat-icon">📅</div><div class="feat-name">예약 방법</div><div class="feat-sub">전화·카톡 원터치</div></div>
+    <div class="feat"><div class="feat-icon">💰</div><div class="feat-name">가격 안내</div><div class="feat-sub">정직한 견적표</div></div>
+    <div class="feat"><div class="feat-icon">💬</div><div class="feat-name">고객 후기</div><div class="feat-sub">별점·실후기</div></div>
+    <div class="feat"><div class="feat-icon">❓</div><div class="feat-name">자주 묻는 질문</div><div class="feat-sub">FAQ 접이식</div></div>
+    <div class="feat"><div class="feat-icon">📞</div><div class="feat-name">하단 고정 버튼</div><div class="feat-sub">전화·카톡 항상</div></div>
+    <div class="feat"><div class="feat-icon">📱</div><div class="feat-name">모바일 최적화</div><div class="feat-sub">99% 손님이 폰</div></div>
+  </div>
+</section>
+
+<div class="sec-gap"></div>
+
+<section class="sec">
+  <div class="sec-label">Why Siteon</div>
+  <h2 class="sec-title">왜 29만원이면 충분한가</h2>
+  <div class="why-list">
+    <div class="why-row">
+      <div class="why-num">01</div>
+      <div class="why-text">
+        <h4>1인 사장님은 원페이지면 끝</h4>
+        <p>여러 메뉴를 클릭하게 만들면 손님은 떠납니다. 한 화면에서 전화번호까지 가야 합니다.</p>
       </div>
     </div>
-    <div class="scard">
-      <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&q=80" alt="스탠드 청소">
-      <div class="scard-body">
-        <div class="scard-name">스탠드 청소</div>
-        <div class="scard-desc">열교환기 완전 세척</div>
-        <div class="scard-price">8만원~</div>
+    <div class="why-row">
+      <div class="why-num">02</div>
+      <div class="why-text">
+        <h4>업종에 맞게 톤이 다릅니다</h4>
+        <p>에어컨은 신뢰감, 도배는 장인 느낌, 타일은 디테일. 업종별 템플릿으로 처음부터 맞춥니다.</p>
       </div>
     </div>
-    <div class="scard">
-      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=80" alt="에어컨 설치">
-      <div class="scard-body">
-        <div class="scard-name">에어컨 설치</div>
-        <div class="scard-desc">신규·이전 설치 전문</div>
-        <div class="scard-price">견적 후 안내</div>
+    <div class="why-row">
+      <div class="why-num">03</div>
+      <div class="why-text">
+        <h4>유지비·플랫폼 수수료 없음</h4>
+        <p>월 사용료 없습니다. 도메인·호스팅 1년 포함. 광고 매출 떼이지 않습니다.</p>
       </div>
     </div>
-    <div class="scard">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="가스 충전">
-      <div class="scard-body">
-        <div class="scard-name">가스 충전</div>
-        <div class="scard-desc">냉방 불량 냉매 보충</div>
-        <div class="scard-price">견적 후 안내</div>
+    <div class="why-row">
+      <div class="why-num">04</div>
+      <div class="why-text">
+        <h4>3일 안에 오픈</h4>
+        <p>상담 → 사진·문구 받기 → 3일 내 시안 → 수정 1회 → 오픈. 끌지 않습니다.</p>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="divider"></div>
+<div class="sec-gap"></div>
 
-<!-- BEFORE AFTER -->
-<div class="section">
-  <div class="section-label">RESULT</div>
-  <div class="section-title">청소 전·후 비교</div>
-  <div class="ba">
-    <div class="ba-row">
-      <div class="ba-col">
-        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80" alt="청소 전">
-        <div class="ba-col-label">😰 청소 전</div>
-      </div>
-      <div class="ba-col">
-        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&q=80" alt="청소 후">
-        <div class="ba-col-label">✨ 청소 후</div>
-      </div>
+<section class="sec">
+  <div class="sec-label">Compare</div>
+  <h2 class="sec-title">비교해보세요</h2>
+  <div class="compare">
+    <div class="compare-row head">
+      <div></div>
+      <div>사이트온</div>
+      <div>일반 제작</div>
+    </div>
+    <div class="compare-row">
+      <div>제작 비용</div>
+      <div class="ours">29만원</div>
+      <div class="theirs">100~300만원</div>
+    </div>
+    <div class="compare-row">
+      <div>월 유지비</div>
+      <div class="ours">없음</div>
+      <div class="theirs">월 3~10만원</div>
+    </div>
+    <div class="compare-row">
+      <div>오픈까지</div>
+      <div class="ours">3일</div>
+      <div class="theirs">2~4주</div>
+    </div>
+    <div class="compare-row">
+      <div>모바일 최적화</div>
+      <div class="ours">기본</div>
+      <div class="theirs">옵션</div>
+    </div>
+    <div class="compare-row">
+      <div>도메인·호스팅</div>
+      <div class="ours">1년 포함</div>
+      <div class="theirs">별도 청구</div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="divider"></div>
+<div class="sec-gap"></div>
 
-<!-- TRUST -->
-<div class="section">
-  <div class="section-label">WHY US</div>
-  <div class="section-title">왜 쾌적에어텍인가요?</div>
-  <div class="trust-grid">
-    <div class="trust-card">
-      <div class="trust-icon">🏅</div>
-      <div class="trust-name">전문 자격증 보유</div>
-      <div class="trust-sub">냉동공조 자격</div>
-    </div>
-    <div class="trust-card">
-      <div class="trust-icon">🚗</div>
-      <div class="trust-name">당일 출장</div>
-      <div class="trust-sub">예약 당일 방문</div>
-    </div>
-    <div class="trust-card">
-      <div class="trust-icon">🦠</div>
-      <div class="trust-name">항균 처리 포함</div>
-      <div class="trust-sub">코팅 기본 제공</div>
-    </div>
-    <div class="trust-card">
-      <div class="trust-icon">💬</div>
-      <div class="trust-name">AS 보장</div>
-      <div class="trust-sub">청소 후 1개월 무상</div>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- PROCESS -->
-<div class="section">
-  <div class="section-label">PROCESS</div>
-  <div class="section-title">청소 진행 과정</div>
+<section class="sec">
+  <div class="sec-label">Process</div>
+  <h2 class="sec-title">진행 방식</h2>
   <div class="process">
-    <div class="prow"><div class="pnum">1</div><div class="ptext"><h4>전화·카톡 예약</h4><p>기종, 대수, 날짜를 알려주세요</p></div></div>
-    <div class="prow"><div class="pnum">2</div><div class="ptext"><h4>방문 및 현장 확인</h4><p>약속 시간에 정확히 방문, 상태 점검</p></div></div>
-    <div class="prow"><div class="pnum">3</div><div class="ptext"><h4>분해 세척</h4><p>필터·열교환기·팬 완전 분해 세척</p></div></div>
-    <div class="prow"><div class="pnum">4</div><div class="ptext"><h4>항균 코팅 & 재조립</h4><p>항균 코팅 후 깔끔하게 재조립</p></div></div>
-    <div class="prow"><div class="pnum">5</div><div class="ptext"><h4>작동 확인 & 완료</h4><p>냉방 테스트 후 명세서 제공</p></div></div>
+    <div class="pr-row"><div class="pr-num">1</div><div class="pr-text"><h4>카톡 상담</h4><p>업종, 매장명, 지역 알려주세요</p></div></div>
+    <div class="pr-row"><div class="pr-num">2</div><div class="pr-text"><h4>업종 템플릿 선택</h4><p>샘플 보고 마음에 드는 톤 결정</p></div></div>
+    <div class="pr-row"><div class="pr-num">3</div><div class="pr-text"><h4>사진·문구 전달</h4><p>없으면 저희가 잡아드립니다</p></div></div>
+    <div class="pr-row"><div class="pr-num">4</div><div class="pr-text"><h4>3일 내 시안</h4><p>수정 1회 무료</p></div></div>
+    <div class="pr-row"><div class="pr-num">5</div><div class="pr-text"><h4>오픈 & 도메인 연결</h4><p>주소 알려드리고 끝</p></div></div>
   </div>
-</div>
+</section>
 
-<div class="divider"></div>
+<div class="sec-gap"></div>
 
-<!-- REVIEWS -->
-<div class="section">
-  <div class="section-label">REVIEW</div>
-  <div class="section-title">실제 고객 후기</div>
-  <div class="review-list">
-    <div class="rcard">
-      <div class="rcard-top"><div class="rname">김○○ 고객님 (수성구)</div><div class="rstars">★★★★★</div></div>
-      <div class="rtext">에어컨에서 퀴퀴한 냄새가 나서 연락했는데 당일 바로 오셨어요. 청소 후 냄새 완전히 사라졌고 냉방도 훨씬 잘 되네요.</div>
-      <div class="rdate">2025년 7월</div>
-    </div>
-    <div class="rcard">
-      <div class="rcard-top"><div class="rname">이○○ 고객님 (달서구)</div><div class="rstars">★★★★★</div></div>
-      <div class="rtext">상가 스탠드 2대 청소했는데 꼼꼼하게 해주셨어요. 비포/애프터 사진도 찍어서 보여주시더라고요. 믿음이 갔습니다.</div>
-      <div class="rdate">2025년 6월</div>
-    </div>
-    <div class="rcard">
-      <div class="rcard-top"><div class="rname">박○○ 고객님 (중구)</div><div class="rstars">★★★★★</div></div>
-      <div class="rtext">시간 약속 칼같이 지키시고 뒷정리까지 깔끔하게 하고 가셨습니다. 내년에도 또 부를 것 같아요.</div>
-      <div class="rdate">2025년 8월</div>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- FAQ -->
-<div class="section">
-  <div class="section-label">FAQ</div>
-  <div class="section-title">자주 묻는 질문</div>
+<section class="sec">
+  <div class="sec-label">FAQ</div>
+  <h2 class="sec-title">자주 묻는 질문</h2>
   <div class="faq">
-    <div class="faq-item">
-      <button class="faq-q" onclick="faq(this)">청소 시간이 얼마나 걸리나요?<span class="faq-arr">▾</span></button>
-      <div class="faq-a">벽걸이 1대 기준 40~60분, 스탠드는 60~90분 정도 소요됩니다.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="faq(this)">청소 중에 집에 있어야 하나요?<span class="faq-arr">▾</span></button>
-      <div class="faq-a">완료 후 문자로 알려드리고 작동 확인은 함께 하는 것을 권장합니다.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="faq(this)">냄새가 심한데 한 번으로 없어지나요?<span class="faq-arr">▾</span></button>
-      <div class="faq-a">대부분의 냄새는 1회 분해 세척 후 제거됩니다. 오래 방치된 경우 현장에서 안내드립니다.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="faq(this)">청소 후 바로 사용해도 되나요?<span class="faq-arr">▾</span></button>
-      <div class="faq-a">건조 완료 기준 약 1~2시간 후 사용을 권장합니다.</div>
-    </div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">정말 추가 비용이 없나요?<span class="faq-arr">▾</span></button><div class="faq-a">29만원 (VAT 별도) 외 1년 안에 추가 청구 없습니다. 도메인·호스팅 1년 포함. 2년차부터 도메인 갱신비(연 2만원대)만 발생합니다.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">사진이 없는데 만들 수 있나요?<span class="faq-arr">▾</span></button><div class="faq-a">네. 업종 무료 사진을 활용해 먼저 만들고, 나중에 직접 찍은 사진으로 교체할 수 있게 안내드립니다.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">수정은 몇 번까지 가능한가요?<span class="faq-arr">▾</span></button><div class="faq-a">시안 후 1회 수정 무료. 오픈 후 텍스트·전화번호·사진 교체는 6개월간 무료입니다.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">제 업종은 템플릿이 없는데요?<span class="faq-arr">▾</span></button><div class="faq-a">에어컨·도배·타일 외 업종도 가능합니다. 비슷한 업종 톤을 베이스로 맞춰드립니다. 카톡으로 문의주세요.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">네이버 검색에 나오나요?<span class="faq-arr">▾</span></button><div class="faq-a">기본 SEO 처리되어 있습니다. 다만 네이버 상위 노출은 별도 마케팅 영역이라 보장은 어렵습니다.</div></div>
   </div>
+</section>
+
+<div class="cta-final">
+  <h3>지금 시작하세요</h3>
+  <p>카톡으로 문의주시면<br>30분 안에 답장드립니다</p>
+  <a href="https://open.kakao.com/o/sXXXXXXX" class="cta-btn">카톡으로 문의하기 →</a>
 </div>
 
-<!-- BOTTOM NAV -->
+<div class="footer">
+  <div class="fbrand">사이트온 · siteon</div>
+  1인 사장님 전용 홈페이지 29만원<br>
+  대표: 사이트온 · 문의: 카카오톡 오픈채팅<br>
+  © 2026 siteon. All rights reserved.
+</div>
+
+</div>
+
 <div class="bottom-nav">
-  <a href="tel:010-0000-0000" class="bnav-btn bnav-call">📞 전화 연결</a>
-  <a href="https://open.kakao.com/o/sXXXXXXX" class="bnav-btn bnav-kakao">💬 카톡 문의</a>
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="bnav-btn bnav-main">📋 샘플 다시 보기</a>
+  <a href="https://open.kakao.com/o/sXXXXXXX" class="bnav-btn bnav-kakao">💬 카톡으로 문의</a>
 </div>
 
 <script>

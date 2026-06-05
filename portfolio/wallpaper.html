@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한울도배 인테리어 | 도배·장판·인테리어 시공 전문</title>
+<meta name="description" content="20년 외길 도배 장인. 친환경 자재만 사용. 견적 무료, 사후관리 1년.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --brand: #8B6F47;
+  --brand-dark: #5C4A30;
+  --brand-soft: #F5EFE6;
+  --accent: #C9A875;
+  --text: #2A2520;
+  --sub: #786E63;
+  --border: #E8E0D4;
+  --bg: #FAF7F2;
+  --white: #fff;
+  --r: 10px;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  padding-bottom: 72px;
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.demo-bar {
+  background: #2A2520; color: white;
+  padding: 8px 16px; font-size: 12px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.demo-bar a { color: #D4B896; text-decoration: none; font-weight: 600; }
+
+/* HERO */
+.hero { position: relative; height: 360px; overflow: hidden; background: var(--brand-soft); }
+.hero img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.85; }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(42,37,32,0.1) 0%, rgba(42,37,32,0.75) 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 28px 22px; color: white;
+}
+.hero-eyebrow {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 13px; letter-spacing: 0.15em;
+  color: var(--accent); margin-bottom: 14px; font-weight: 500;
+}
+.hero h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 28px; font-weight: 700;
+  line-height: 1.35; margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+.hero p { font-size: 13px; opacity: 0.9; margin-bottom: 18px; line-height: 1.7; }
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--accent); color: #2A2520;
+  font-weight: 700; font-size: 14px;
+  padding: 13px 24px; border-radius: 4px;
+  text-decoration: none; width: fit-content;
+  letter-spacing: 0.05em;
+}
+
+/* INTRO STRIP */
+.intro-strip {
+  background: var(--brand-dark); color: white;
+  padding: 22px 20px; text-align: center;
+}
+.intro-strip-num {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 34px; font-weight: 700; color: var(--accent);
+  display: block; margin-bottom: 4px;
+}
+.intro-strip-text { font-size: 13px; opacity: 0.85; }
+
+/* SECTION */
+.section { padding: 40px 22px; }
+.section-label {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 12px; font-weight: 500;
+  color: var(--brand); letter-spacing: 0.2em;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+.section-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 22px; font-weight: 700;
+  margin-bottom: 22px; line-height: 1.4;
+  letter-spacing: -0.5px;
+}
+.divider { height: 1px; background: var(--border); margin: 0 22px; }
+
+/* SERVICE */
+.service-list { display: flex; flex-direction: column; gap: 14px; }
+.scard {
+  display: flex; gap: 14px;
+  padding: 16px; border-radius: var(--r);
+  background: var(--bg); border: 1px solid var(--border);
+}
+.scard img { width: 90px; height: 90px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+.scard-body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.scard-name { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.scard-desc { font-size: 12px; color: var(--sub); line-height: 1.55; margin-bottom: 6px; }
+.scard-price { font-size: 13px; font-weight: 700; color: var(--brand); }
+
+/* GALLERY */
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.gallery img { width: 100%; height: 130px; object-fit: cover; display: block; }
+
+/* WHY */
+.why-list { display: flex; flex-direction: column; gap: 18px; }
+.why-row { display: flex; gap: 16px; align-items: flex-start; }
+.why-num {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 24px; font-weight: 700;
+  color: var(--accent); width: 40px; flex-shrink: 0;
+  line-height: 1;
+}
+.why-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.why-text p { font-size: 13px; color: var(--sub); line-height: 1.7; }
+
+/* PROCESS */
+.process { display: flex; flex-direction: column; gap: 0; }
+.prow {
+  display: flex; gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.prow:last-child { border-bottom: none; }
+.pnum {
+  width: 28px; height: 28px;
+  border: 1.5px solid var(--brand);
+  color: var(--brand); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; flex-shrink: 0;
+}
+.ptext h4 { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.ptext p { font-size: 12px; color: var(--sub); }
+
+/* REVIEW */
+.review-list { display: flex; flex-direction: column; gap: 14px; }
+.rcard {
+  background: var(--bg); border-radius: var(--r);
+  padding: 18px 16px; border: 1px solid var(--border);
+}
+.rcard-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.rname { font-size: 13px; font-weight: 700; color: var(--brand-dark); }
+.rstars { color: var(--accent); font-size: 12px; letter-spacing: 1px; }
+.rtext { font-size: 13px; color: var(--text); line-height: 1.7; }
+.rdate { font-size: 11px; color: var(--sub); margin-top: 8px; }
+
+/* FAQ */
+.faq { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+  width: 100%; background: transparent; border: none;
+  padding: 18px 0; text-align: left; font-family: inherit;
+  font-size: 14px; font-weight: 600; color: var(--text);
+  cursor: pointer; display: flex; justify-content: space-between;
+  align-items: center; gap: 8px;
+}
+.faq-q.open { color: var(--brand); }
+.faq-arr { font-size: 14px; transition: transform 0.2s; flex-shrink: 0; color: var(--sub); }
+.faq-q.open .faq-arr { transform: rotate(180deg); }
+.faq-a { display: none; padding: 0 0 18px; font-size: 13px; color: var(--sub); line-height: 1.75; }
+.faq-a.open { display: block; }
+
+/* CONTACT */
+.contact {
+  background: var(--brand-dark); color: white;
+  padding: 36px 22px; text-align: center;
+}
+.contact h3 { font-family: 'Noto Serif KR', serif; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.contact p { font-size: 13px; opacity: 0.8; margin-bottom: 22px; }
+.contact-info { display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+.contact-info-row { padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.15); }
+.contact-info-row:first-child { border-top: none; }
+.contact-info-row strong { color: var(--accent); margin-right: 12px; font-weight: 600; }
+
+/* BOTTOM NAV */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+  max-width: 520px; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr;
+  background: white; z-index: 99;
+  border-top: 1px solid var(--border);
+}
+.bnav-btn {
+  display: flex; align-items: center; justify-content: center;
+  gap: 6px; padding: 16px; font-family: inherit;
+  font-size: 15px; font-weight: 700;
+  border: none; cursor: pointer; text-decoration: none;
+}
+.bnav-call { background: var(--brand-dark); color: white; }
+.bnav-kakao { background: #FEE500; color: #3B1F00; }
+</style>
+</head>
+<body>
+
+<div class="demo-bar">
+  <span>📦 사이트온 샘플 · 도배/인테리어 업종</span>
+  <a href="/">← 메인으로</a>
+</div>
+
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="인테리어">
+  <div class="hero-overlay">
+    <div class="hero-eyebrow">SINCE 2003 · 한울도배</div>
+    <h1>20년 외길,<br>장인의 손끝으로</h1>
+    <p>친환경 자재만 고집하는 도배·장판·인테리어<br>사후관리 1년 무상</p>
+    <a href="tel:010-0000-0000" class="hero-cta">무료 견적 받기 →</a>
+  </div>
+</div>
+
+<div class="intro-strip">
+  <span class="intro-strip-num">1,800+</span>
+  <div class="intro-strip-text">서울·경기 누적 시공 현장</div>
+</div>
+
+<div class="section">
+  <div class="section-label">Service</div>
+  <div class="section-title">제공 서비스</div>
+  <div class="service-list">
+    <div class="scard">
+      <img src="https://images.unsplash.com/photo-1615875221496-2654ba0a5dde?w=400&q=80" alt="">
+      <div class="scard-body">
+        <div class="scard-name">실크/합지 도배</div>
+        <div class="scard-desc">친환경 본드 사용, 이음매 깔끔 시공</div>
+        <div class="scard-price">평당 25,000원~</div>
+      </div>
+    </div>
+    <div class="scard">
+      <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=400&q=80" alt="">
+      <div class="scard-body">
+        <div class="scard-name">장판/마루 시공</div>
+        <div class="scard-desc">강화마루·LG지인 정품 자재</div>
+        <div class="scard-price">평당 45,000원~</div>
+      </div>
+    </div>
+    <div class="scard">
+      <img src="https://images.unsplash.com/photo-1556909114-67f5e0ed7f6c?w=400&q=80" alt="">
+      <div class="scard-body">
+        <div class="scard-name">부분 인테리어</div>
+        <div class="scard-desc">아트월·포인트 벽·몰딩 교체</div>
+        <div class="scard-price">견적 후 안내</div>
+      </div>
+    </div>
+    <div class="scard">
+      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80" alt="">
+      <div class="scard-body">
+        <div class="scard-name">상가/사무실</div>
+        <div class="scard-desc">영업 지장 없는 야간 시공 가능</div>
+        <div class="scard-price">견적 후 안내</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">Portfolio</div>
+  <div class="section-title">최근 시공 현장</div>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=400&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&q=80" alt="">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">Why Hanwool</div>
+  <div class="section-title">한울만의 약속</div>
+  <div class="why-list">
+    <div class="why-row">
+      <div class="why-num">01</div>
+      <div class="why-text">
+        <h4>20년 한 길, 직접 시공</h4>
+        <p>대표가 직접 현장에 나갑니다. 하청·재하도급 없습니다.</p>
+      </div>
+    </div>
+    <div class="why-row">
+      <div class="why-num">02</div>
+      <div class="why-text">
+        <h4>친환경 자재 원칙</h4>
+        <p>새 집 증후군 걱정 없는 KC 인증 친환경 본드·도배지만 사용합니다.</p>
+      </div>
+    </div>
+    <div class="why-row">
+      <div class="why-num">03</div>
+      <div class="why-text">
+        <h4>견적은 무료, 가격은 정직</h4>
+        <p>방문 견적 무료. 추가 비용 없는 정직한 견적서 제공.</p>
+      </div>
+    </div>
+    <div class="why-row">
+      <div class="why-num">04</div>
+      <div class="why-text">
+        <h4>1년 사후관리</h4>
+        <p>시공 후 들뜸·이음매 벌어짐 무상 보수.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">Process</div>
+  <div class="section-title">예약·시공 절차</div>
+  <div class="process">
+    <div class="prow"><div class="pnum">1</div><div class="ptext"><h4>전화 상담</h4><p>평형, 시공 범위, 희망 일정 안내</p></div></div>
+    <div class="prow"><div class="pnum">2</div><div class="ptext"><h4>방문 견적 (무료)</h4><p>현장 실측 후 정식 견적서 발행</p></div></div>
+    <div class="prow"><div class="pnum">3</div><div class="ptext"><h4>자재 선택</h4><p>샘플북 지참 방문, 함께 선택</p></div></div>
+    <div class="prow"><div class="pnum">4</div><div class="ptext"><h4>시공</h4><p>약속 일정에 맞춰 당일 마무리</p></div></div>
+    <div class="prow"><div class="pnum">5</div><div class="ptext"><h4>완공 점검</h4><p>고객 함께 확인 후 잔금 결제</p></div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">Review</div>
+  <div class="section-title">고객 후기</div>
+  <div class="review-list">
+    <div class="rcard">
+      <div class="rcard-top"><div class="rname">정○○ 고객님 (강남구)</div><div class="rstars">★★★★★</div></div>
+      <div class="rtext">25평 거실+방2 도배 의뢰. 이음매가 정말 안 보일 정도로 깔끔하게 해주셨어요. 친환경 자재라 아이도 안심.</div>
+      <div class="rdate">2025년 5월</div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-top"><div class="rname">최○○ 고객님 (분당)</div><div class="rstars">★★★★★</div></div>
+      <div class="rtext">상가 야간 시공 부탁드렸는데 다음날 아침 영업에 전혀 지장 없게 마무리해주셨습니다. 정말 프로페셔널.</div>
+      <div class="rdate">2025년 4월</div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-top"><div class="rname">윤○○ 고객님 (송파구)</div><div class="rstars">★★★★★</div></div>
+      <div class="rtext">견적부터 시공까지 군더더기가 없어요. 사장님이 직접 오셔서 시공하시고 자재 설명도 친절하게 해주셨습니다.</div>
+      <div class="rdate">2025년 3월</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-label">FAQ</div>
+  <div class="section-title">자주 묻는 질문</div>
+  <div class="faq">
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">시공 기간은 얼마나 걸리나요?<span class="faq-arr">▾</span></button><div class="faq-a">평형과 범위에 따라 다르지만, 24평 기준 도배는 1일, 마루는 1~2일 정도 소요됩니다.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">이사 전후 어느 쪽이 좋나요?<span class="faq-arr">▾</span></button><div class="faq-a">이사 전 빈 집 상태에서 시공하는 것이 가장 깔끔하고 빠릅니다.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">자재는 직접 골라야 하나요?<span class="faq-arr">▾</span></button><div class="faq-a">샘플북을 지참하고 방문드립니다. 함께 보시면서 결정할 수 있습니다.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">시공 후 문제가 생기면요?<span class="faq-arr">▾</span></button><div class="faq-a">시공 후 1년 이내 들뜸·벌어짐은 무상으로 재시공해드립니다.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">출장 가능 지역이 어디까지인가요?<span class="faq-arr">▾</span></button><div class="faq-a">서울 전 지역, 경기 분당·용인·일산까지 출장 가능합니다.</div></div>
+  </div>
+</div>
+
+<div class="contact">
+  <h3>견적 문의</h3>
+  <p>편한 시간에 연락 주세요</p>
+  <div class="contact-info">
+    <div class="contact-info-row"><strong>대표</strong>한울도배 김한울</div>
+    <div class="contact-info-row"><strong>전화</strong>010-0000-0000</div>
+    <div class="contact-info-row"><strong>상담시간</strong>평일 09:00 - 19:00</div>
+    <div class="contact-info-row"><strong>출장지역</strong>서울·경기 전 지역</div>
+  </div>
+</div>
+
+<div class="bottom-nav">
+  <a href="tel:010-0000-0000" class="bnav-btn bnav-call">📞 전화 상담</a>
+  <a href="https://open.kakao.com/o/sXXXXXXX" class="bnav-btn bnav-kakao">💬 카톡 문의</a>
+</div>
+
+<script>
+function faq(btn) {
+  const a = btn.nextElementSibling;
+  const open = a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(x => x.classList.remove('open'));
+  if (!open) { a.classList.add('open'); btn.classList.add('open'); }
+}
+</script>
+</body>
+</html>
