@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>온더네일 | 1인 네일·속눈썹 전문</title>
+<meta name="description" content="대표 원장이 직접 시술합니다. 인스타 디자인 100+, 정찰제 가격, 카톡으로 사전 시안 상담.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #C97A85;
+    --accent-dark: #A45D67;
+    --accent-soft: #FAEEED;
+    --ink: #1F1517;
+    --ink-2: #2E2125;
+    --text: #4A3A3E;
+    --muted: #8B7A7E;
+    --line: #ECE2E2;
+    --line-2: #F6EFEF;
+    --bg: #FBF6F5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    color: var(--ink-2); background: white; line-height: 1.65;
+    -webkit-font-smoothing: antialiased; letter-spacing: -0.3px; font-size: 15px;
+  }
+  body { max-width: 520px; margin: 0 auto; padding-bottom: 76px; background: white; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .demo-bar { background: var(--ink); color: white; padding: 9px 18px; font-size: 12px; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
+  .demo-bar a { color: #F4C2C8; font-weight: 600; }
+
+  .nav { padding: 18px 22px; background: white; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 40; }
+  .nav-brand { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; color: var(--ink); }
+  .nav-brand span { color: var(--accent); margin-right: 2px; }
+  .nav-tel { font-size: 13px; font-weight: 700; color: var(--accent); }
+
+  .hero { position: relative; background: var(--ink); color: white; min-height: 540px; display: flex; flex-direction: column; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200&q=85'); background-size: cover; background-position: center; opacity: 0.45; }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(31,21,23,0.2) 0%, rgba(31,21,23,0.88) 80%); }
+  .hero-inner { position: relative; z-index: 1; padding: 72px 24px 48px; margin-top: auto; }
+  .hero-eyebrow { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; color: #F4C2C8; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid rgba(244,194,200,0.4); }
+  .hero h1 { font-size: 32px; font-weight: 800; line-height: 1.3; letter-spacing: -1px; margin-bottom: 16px; }
+  .hero h1 strong { color: #F4C2C8; font-weight: 800; }
+  .hero-sub { font-size: 15px; color: rgba(255,255,255,0.78); line-height: 1.75; margin-bottom: 32px; max-width: 380px; }
+  .hero-cta-row { display: flex; gap: 10px; }
+  .btn-primary { flex: 1; background: white; color: var(--ink); padding: 16px; border-radius: 8px; font-weight: 700; font-size: 15px; text-align: center; }
+  .btn-secondary { flex: 1; background: transparent; color: white; border: 1px solid rgba(255,255,255,0.4); padding: 16px; border-radius: 8px; font-weight: 600; font-size: 15px; text-align: center; }
+
+  .stats { display: grid; grid-template-columns: 1fr 1fr 1fr; background: white; border-bottom: 1px solid var(--line); }
+  .stat { padding: 28px 12px; text-align: center; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-size: 26px; font-weight: 800; color: var(--ink); letter-spacing: -1px; line-height: 1; }
+  .stat-num .unit { font-size: 14px; font-weight: 600; color: var(--muted); margin-left: 2px; }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 8px; font-weight: 500; }
+
+  .sec { padding: 72px 24px; background: white; }
+  .sec.alt { background: var(--bg); }
+  .sec-eyebrow { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; }
+  .sec-title { font-size: 26px; font-weight: 800; color: var(--ink); letter-spacing: -0.8px; line-height: 1.35; margin-bottom: 12px; }
+  .sec-lead { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 36px; }
+
+  /* Menu grid (네일 특화) */
+  .menu-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .menu-card {
+    background: white; border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+  }
+  .menu-img {
+    width: 100%; aspect-ratio: 1; object-fit: cover; background: var(--bg);
+  }
+  .menu-body { padding: 14px 14px 16px; }
+  .menu-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.3px; }
+  .menu-desc { font-size: 12px; color: var(--muted); line-height: 1.55; margin-bottom: 10px; }
+  .menu-price { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .menu-price .unit { font-size: 11px; color: var(--muted); font-weight: 500; margin-left: 2px; }
+
+  /* Design gallery (네일 특화 - mosaic) */
+  .gallery { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+  .gallery-item { aspect-ratio: 1; overflow: hidden; background: var(--line); }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery-item.tall { aspect-ratio: 1/2; grid-row: span 2; }
+
+  .process-list { display: flex; flex-direction: column; gap: 20px; }
+  .process-item { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: flex-start; }
+  .process-num { width: 36px; height: 36px; border: 1.5px solid var(--ink); color: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .process-text h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 3px; letter-spacing: -0.3px; }
+  .process-text p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+  .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .cred-card { background: white; padding: 28px 18px; text-align: center; }
+  .cred-mark { width: 40px; height: 40px; margin: 0 auto 14px; border: 1.5px solid var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: var(--ink); letter-spacing: -0.3px; }
+  .cred-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.3px; }
+  .cred-sub { font-size: 12px; color: var(--muted); line-height: 1.55; }
+
+  .review-list { display: flex; flex-direction: column; }
+  .review-item { padding: 24px 0; border-top: 1px solid var(--line); }
+  .review-item:last-child { border-bottom: 1px solid var(--line); }
+  .review-text { font-size: 15px; color: var(--ink-2); line-height: 1.75; margin-bottom: 14px; letter-spacing: -0.3px; }
+  .review-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+  .review-name { font-weight: 600; color: var(--text); }
+
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-top: 1px solid var(--line); }
+  .faq-item:last-child { border-bottom: 1px solid var(--line); }
+  .faq-q { width: 100%; background: transparent; border: none; padding: 22px 0; text-align: left; font-family: inherit; font-size: 15px; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; letter-spacing: -0.3px; }
+  .faq-arr { width: 18px; height: 18px; border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg); margin-bottom: 4px; transition: transform 0.2s; }
+  .faq-q.open .faq-arr { transform: rotate(-135deg); margin-bottom: -4px; }
+  .faq-a { display: none; padding: 0 0 22px; font-size: 14px; color: var(--text); line-height: 1.8; }
+  .faq-a.open { display: block; }
+
+  .cta-band { background: var(--ink); color: white; padding: 64px 24px; text-align: center; }
+  .cta-band-title { font-size: 24px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.7px; line-height: 1.4; }
+  .cta-band-sub { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 32px; line-height: 1.7; }
+  .cta-tel-large { display: inline-block; font-size: 28px; font-weight: 800; color: white; letter-spacing: -0.5px; padding: 18px 36px; border: 1.5px solid rgba(255,255,255,0.4); border-radius: 8px; }
+
+  .contact-info { background: white; padding: 56px 24px; border-top: 1px solid var(--line); }
+  .contact-row { display: grid; grid-template-columns: 90px 1fr; padding: 16px 0; border-bottom: 1px solid var(--line-2); font-size: 14px; }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row strong { font-weight: 600; color: var(--muted); }
+  .contact-row span { color: var(--ink); font-weight: 500; }
+
+  .bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); max-width: 520px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; background: white; border-top: 1px solid var(--line); z-index: 50; }
+  .bnav-btn { padding: 18px; font-size: 15px; font-weight: 700; text-align: center; letter-spacing: -0.3px; }
+  .bnav-call { background: var(--ink); color: white; }
+  .bnav-kakao { background: white; color: var(--ink); border-left: 1px solid var(--line); }
+</style>
+</head>
+<body>
+
+<div class="demo-bar">
+  <span>사이트온 샘플 · 네일·속눈썹 업종</span>
+  <a href="/">← 메인으로</a>
+</div>
+
+<nav class="nav">
+  <div class="nav-brand"><span>•</span> 온더네일</div>
+  <a href="tel:010-0000-0000" class="nav-tel">010-0000-0000</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">1:1 PRIVATE NAIL</div>
+    <h1>오롯이 한 사람을 위한,<br><strong>1:1 프라이빗 네일.</strong></h1>
+    <p class="hero-sub">대표 원장이 직접 디자인하고 시술합니다.<br>예약제 운영으로 기다림 없이 편안하게.</p>
+    <div class="hero-cta-row">
+      <a href="tel:010-0000-0000" class="btn-primary">예약 문의</a>
+      <a href="#menu" class="btn-secondary">시술 메뉴</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">9<span class="unit">년</span></div><div class="stat-label">원장 경력</div></div>
+  <div class="stat"><div class="stat-num">100<span class="unit">+</span></div><div class="stat-label">디자인 보유</div></div>
+  <div class="stat"><div class="stat-num">100<span class="unit">%</span></div><div class="stat-label">예약제 운영</div></div>
+</div>
+
+<section class="sec" id="menu">
+  <div class="sec-eyebrow">Menu</div>
+  <h2 class="sec-title">시술 메뉴</h2>
+  <p class="sec-lead">자주 찾으시는 시술의 정찰제 가격입니다.<br>특수 디자인은 카톡으로 사전 시안 상담을 권장드립니다.</p>
+
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=80" alt="">
+      <div class="menu-body">
+        <div class="menu-name">젤 원톤</div>
+        <div class="menu-desc">단색 컬러, 깔끔한 데일리</div>
+        <div class="menu-price">35,000원<span class="unit">~</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=400&q=80" alt="">
+      <div class="menu-body">
+        <div class="menu-name">프렌치 · 그라데이션</div>
+        <div class="menu-desc">은은한 라인 또는 그라데이션</div>
+        <div class="menu-price">45,000원<span class="unit">~</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=400&q=80" alt="">
+      <div class="menu-body">
+        <div class="menu-name">아트 디자인</div>
+        <div class="menu-desc">파츠·라인·꾸미기 자유 조합</div>
+        <div class="menu-price">55,000원<span class="unit">~</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=400&q=80" alt="">
+      <div class="menu-body">
+        <div class="menu-name">연장 (젤·아크릴)</div>
+        <div class="menu-desc">길이·모양 자유 선택</div>
+        <div class="menu-price">75,000원<span class="unit">~</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1583241800698-9c2e09a51945?w=400&q=80" alt="">
+      <div class="menu-body">
+        <div class="menu-name">속눈썹 (내추럴)</div>
+        <div class="menu-desc">데일리용, 자연스러운 풍성함</div>
+        <div class="menu-price">55,000원<span class="unit">~</span></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1561589557-72dde6c637b6?w=400&q=80" alt="">
+      <div class="menu-body">
+        <div class="menu-name">속눈썹 (볼륨)</div>
+        <div class="menu-desc">5D~12D, 화려한 볼륨감</div>
+        <div class="menu-price">75,000원<span class="unit">~</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="sec-eyebrow">Design</div>
+  <h2 class="sec-title">디자인 갤러리</h2>
+  <p class="sec-lead">최근 시술한 디자인 일부를 공유합니다.<br>인스타그램에서 더 많은 디자인을 확인하실 수 있습니다.</p>
+
+  <div class="gallery">
+    <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=80" alt=""></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=400&q=80" alt=""></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=400&q=80" alt=""></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=400&q=80" alt=""></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1604902396830-aca29e19b067?w=400&q=80" alt=""></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=400&q=80" alt=""></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1632344004369-b3eafb7b80f3?w=400&q=80" alt=""></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow">Process</div>
+  <h2 class="sec-title">방문 안내</h2>
+  <p class="sec-lead">완전 예약제로 운영합니다.<br>방문 전 카톡으로 시안을 미리 공유해 주시면 더 정확합니다.</p>
+
+  <div class="process-list">
+    <div class="process-item"><div class="process-num">1</div>
+      <div class="process-text"><h4>카톡 예약</h4><p>희망 메뉴, 날짜, 시안 사진을 보내주시기 바랍니다.</p></div></div>
+    <div class="process-item"><div class="process-num">2</div>
+      <div class="process-text"><h4>일정 확정</h4><p>시술 소요 시간을 안내드린 후 일정을 확정합니다.</p></div></div>
+    <div class="process-item"><div class="process-num">3</div>
+      <div class="process-text"><h4>매장 방문</h4><p>예약 시간 정시 방문 부탁드립니다.</p></div></div>
+    <div class="process-item"><div class="process-num">4</div>
+      <div class="process-text"><h4>시술 진행</h4><p>큐티클 정리부터 마감까지 1:1 진행합니다.</p></div></div>
+    <div class="process-item"><div class="process-num">5</div>
+      <div class="process-text"><h4>완성 및 결제</h4><p>마감 확인 후 카드·계좌로 결제 진행합니다.</p></div></div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="sec-eyebrow">Why On The Nail</div>
+  <h2 class="sec-title">온더네일의 약속</h2>
+  <p class="sec-lead">위생과 디자인 모두 타협하지 않습니다.<br>매 시술마다 동일한 기준을 지킵니다.</p>
+
+  <div class="cred-grid">
+    <div class="cred-card"><div class="cred-mark">1:1</div><div class="cred-name">완전 예약제</div><div class="cred-sub">기다림 없는 프라이빗</div></div>
+    <div class="cred-card"><div class="cred-mark">위생</div><div class="cred-name">1회용 도구 사용</div><div class="cred-sub">매 고객 새 도구</div></div>
+    <div class="cred-card"><div class="cred-mark">자격</div><div class="cred-name">미용사(네일) 면허</div><div class="cred-sub">국가공인 자격 보유</div></div>
+    <div class="cred-card"><div class="cred-mark">A/S</div><div class="cred-name">7일 무상 보수</div><div class="cred-sub">파손·들뜸 무상 수선</div></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow">Review</div>
+  <h2 class="sec-title">고객 후기</h2>
+  <p class="sec-lead">실제 방문해 주신 고객님들의 후기입니다.</p>
+
+  <div class="review-list">
+    <div class="review-item">
+      <p class="review-text">시안 사진 보내드렸을 때 미리 디테일을 물어봐 주셔서 결과물도 정말 마음에 들었습니다. 다음 예약 잡고 왔어요.</p>
+      <div class="review-meta"><span class="review-name">정○○ 고객님</span><span>2025. 07</span></div>
+    </div>
+    <div class="review-item">
+      <p class="review-text">속눈썹 볼륨 처음 받았는데 너무 자연스럽고 뜨지도 않습니다. 매장도 깨끗하고 음악도 좋아서 편하게 받았어요.</p>
+      <div class="review-meta"><span class="review-name">김○○ 고객님</span><span>2025. 06</span></div>
+    </div>
+    <div class="review-item">
+      <p class="review-text">한 분이 끝까지 봐주셔서 좋았고, 손톱 모양도 신경 써서 잡아주셨습니다. 2주 지나도 들뜸 거의 없어요.</p>
+      <div class="review-meta"><span class="review-name">박○○ 고객님</span><span>2025. 05</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="sec-eyebrow">FAQ</div>
+  <h2 class="sec-title">자주 묻는 질문</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">예약 없이 방문 가능한가요?<span class="faq-arr"></span></button>
+      <div class="faq-a">완전 예약제로 운영되어 워크인 방문은 불가합니다. 카톡으로 미리 예약 부탁드립니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">시술 시간은 얼마나 소요되나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">원톤은 약 60분, 아트 디자인은 90~120분, 연장은 약 150분이 소요됩니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">기존 시술 제거도 가능한가요?<span class="faq-arr"></span></button>
+      <div class="faq-a">가능합니다. 제거 후 새 시술 진행 시 10,000원이 추가됩니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">A/S 기간은 어떻게 되나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">시술일로부터 7일 이내 발생한 파손·들뜸은 무상으로 보수해 드립니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">노쇼·취소 정책이 있나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">예약 시간 24시간 이내 취소는 다음 예약 시 50% 선결제를 요청드릴 수 있습니다.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h3 class="cta-band-title">손끝의 변화,<br>지금 예약하세요.</h3>
+  <p class="cta-band-sub">시안과 함께 카톡으로 문의해 주시면<br>희망 일정을 정확히 안내드립니다.</p>
+  <a href="tel:010-0000-0000" class="cta-tel-large">010-0000-0000</a>
+</section>
+
+<section class="contact-info">
+  <div class="contact-row"><strong>원장</strong><span>온더네일 · 한지윤</span></div>
+  <div class="contact-row"><strong>전화</strong><span>010-0000-0000</span></div>
+  <div class="contact-row"><strong>운영시간</strong><span>화-토 11:00 - 20:00 (일·월 휴무)</span></div>
+  <div class="contact-row"><strong>운영방식</strong><span>완전 예약제</span></div>
+  <div class="contact-row"><strong>주소</strong><span>서울 마포구 ○○로 ○○ 2층</span></div>
+</section>
+
+<div class="bottom-nav">
+  <a href="tel:010-0000-0000" class="bnav-btn bnav-call">전화 예약</a>
+  <a href="https://open.kakao.com/o/sXXXXXXX" class="bnav-btn bnav-kakao">카톡 문의</a>
+</div>
+
+<script>
+function faq(btn) {
+  const a = btn.nextElementSibling;
+  const wasOpen = a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(x => x.classList.remove('open'));
+  if (!wasOpen) { a.classList.add('open'); btn.classList.add('open'); }
+}
+</script>
+</body>
+</html>

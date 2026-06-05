@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>도담학습 | 수학·영어 1:1 과외</title>
+<meta name="description" content="현직 대학생·교사 출신 강사가 직접 가르칩니다. 1:1 맞춤 커리큘럼, 무료 진단 테스트, 월말 학부모 리포트.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #C8843B;
+    --accent-dark: #9F6824;
+    --accent-soft: #F7EEDE;
+    --ink: #0F1B2D;
+    --ink-2: #1B2A40;
+    --text: #3A4A60;
+    --muted: #6B7A8C;
+    --line: #E3E7ED;
+    --line-2: #F1F3F7;
+    --bg: #F8F6F1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    color: var(--ink-2); background: white; line-height: 1.65;
+    -webkit-font-smoothing: antialiased; letter-spacing: -0.3px; font-size: 15px;
+  }
+  body { max-width: 520px; margin: 0 auto; padding-bottom: 76px; background: white; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .demo-bar { background: var(--ink); color: white; padding: 9px 18px; font-size: 12px; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
+  .demo-bar a { color: var(--accent); font-weight: 600; }
+
+  .nav { padding: 18px 22px; background: white; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 40; }
+  .nav-brand { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; color: var(--ink); }
+  .nav-brand span { color: var(--accent); margin-right: 2px; }
+  .nav-tel { font-size: 13px; font-weight: 700; color: var(--accent); }
+
+  .hero { position: relative; background: var(--ink); color: white; min-height: 540px; display: flex; flex-direction: column; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=85'); background-size: cover; background-position: center; opacity: 0.35; }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,27,45,0.3) 0%, rgba(15,27,45,0.9) 80%); }
+  .hero-inner { position: relative; z-index: 1; padding: 72px 24px 48px; margin-top: auto; }
+  .hero-eyebrow { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid rgba(200,132,59,0.4); }
+  .hero h1 { font-size: 32px; font-weight: 800; line-height: 1.3; letter-spacing: -1px; margin-bottom: 16px; }
+  .hero h1 strong { color: var(--accent); font-weight: 800; }
+  .hero-sub { font-size: 15px; color: rgba(255,255,255,0.78); line-height: 1.75; margin-bottom: 32px; max-width: 380px; }
+  .hero-cta-row { display: flex; gap: 10px; }
+  .btn-primary { flex: 1; background: white; color: var(--ink); padding: 16px; border-radius: 8px; font-weight: 700; font-size: 15px; text-align: center; }
+  .btn-secondary { flex: 1; background: transparent; color: white; border: 1px solid rgba(255,255,255,0.4); padding: 16px; border-radius: 8px; font-weight: 600; font-size: 15px; text-align: center; }
+
+  .stats { display: grid; grid-template-columns: 1fr 1fr 1fr; background: white; border-bottom: 1px solid var(--line); }
+  .stat { padding: 28px 12px; text-align: center; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-size: 26px; font-weight: 800; color: var(--ink); letter-spacing: -1px; line-height: 1; }
+  .stat-num .unit { font-size: 14px; font-weight: 600; color: var(--muted); margin-left: 2px; }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 8px; font-weight: 500; }
+
+  .sec { padding: 72px 24px; background: white; }
+  .sec.alt { background: var(--bg); }
+  .sec-eyebrow { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; }
+  .sec-title { font-size: 26px; font-weight: 800; color: var(--ink); letter-spacing: -0.8px; line-height: 1.35; margin-bottom: 12px; }
+  .sec-lead { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 36px; }
+
+  /* Tutor profile (과외 특화) */
+  .tutor-list { display: flex; flex-direction: column; gap: 16px; }
+  .tutor {
+    background: white; border: 1px solid var(--line);
+    border-radius: 8px; padding: 22px;
+    display: grid; grid-template-columns: 80px 1fr; gap: 18px; align-items: center;
+  }
+  .tutor-img {
+    width: 80px; height: 80px;
+    background: var(--bg); border-radius: 50%;
+    background-size: cover; background-position: center;
+    flex-shrink: 0;
+  }
+  .tutor-info h4 { font-size: 16px; font-weight: 800; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.3px; }
+  .tutor-subj {
+    display: inline-block; font-size: 11px; font-weight: 700;
+    color: var(--accent); background: var(--accent-soft);
+    padding: 3px 8px; border-radius: 4px; margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+  .tutor-edu { font-size: 13px; color: var(--text); line-height: 1.55; }
+  .tutor-edu small { display: block; font-size: 12px; color: var(--muted); margin-top: 3px; }
+
+  /* Service list */
+  .service-list { display: flex; flex-direction: column; }
+  .service-item { padding: 24px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; }
+  .service-item:last-child { border-bottom: 1px solid var(--line); }
+  .service-info h4 { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.3px; }
+  .service-info p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .service-price { text-align: right; font-size: 15px; font-weight: 700; color: var(--ink); white-space: nowrap; }
+  .service-price .unit { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+  /* Results (성적·합격 케이스) */
+  .results-list { display: flex; flex-direction: column; gap: 14px; }
+  .result-card {
+    background: white; border: 1px solid var(--line);
+    border-radius: 8px; padding: 22px;
+  }
+  .result-meta {
+    font-size: 12px; color: var(--muted); margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+  .result-headline {
+    font-size: 18px; font-weight: 800; color: var(--ink);
+    margin-bottom: 10px; letter-spacing: -0.4px;
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .result-arrow {
+    color: var(--accent); font-weight: 700; font-size: 14px;
+  }
+  .result-desc {
+    font-size: 13px; color: var(--text); line-height: 1.65;
+  }
+
+  .process-list { display: flex; flex-direction: column; gap: 20px; }
+  .process-item { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: flex-start; }
+  .process-num { width: 36px; height: 36px; border: 1.5px solid var(--ink); color: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .process-text h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 3px; letter-spacing: -0.3px; }
+  .process-text p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+  .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .cred-card { background: white; padding: 28px 18px; text-align: center; }
+  .cred-mark { width: 40px; height: 40px; margin: 0 auto 14px; border: 1.5px solid var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: var(--ink); letter-spacing: -0.3px; }
+  .cred-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.3px; }
+  .cred-sub { font-size: 12px; color: var(--muted); line-height: 1.55; }
+
+  .review-list { display: flex; flex-direction: column; }
+  .review-item { padding: 24px 0; border-top: 1px solid var(--line); }
+  .review-item:last-child { border-bottom: 1px solid var(--line); }
+  .review-text { font-size: 15px; color: var(--ink-2); line-height: 1.75; margin-bottom: 14px; letter-spacing: -0.3px; }
+  .review-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+  .review-name { font-weight: 600; color: var(--text); }
+
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-top: 1px solid var(--line); }
+  .faq-item:last-child { border-bottom: 1px solid var(--line); }
+  .faq-q { width: 100%; background: transparent; border: none; padding: 22px 0; text-align: left; font-family: inherit; font-size: 15px; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; letter-spacing: -0.3px; }
+  .faq-arr { width: 18px; height: 18px; border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg); margin-bottom: 4px; transition: transform 0.2s; }
+  .faq-q.open .faq-arr { transform: rotate(-135deg); margin-bottom: -4px; }
+  .faq-a { display: none; padding: 0 0 22px; font-size: 14px; color: var(--text); line-height: 1.8; }
+  .faq-a.open { display: block; }
+
+  .cta-band { background: var(--ink); color: white; padding: 64px 24px; text-align: center; }
+  .cta-band-title { font-size: 24px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.7px; line-height: 1.4; }
+  .cta-band-sub { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 32px; line-height: 1.7; }
+  .cta-tel-large { display: inline-block; font-size: 28px; font-weight: 800; color: white; letter-spacing: -0.5px; padding: 18px 36px; border: 1.5px solid rgba(255,255,255,0.4); border-radius: 8px; }
+
+  .contact-info { background: white; padding: 56px 24px; border-top: 1px solid var(--line); }
+  .contact-row { display: grid; grid-template-columns: 90px 1fr; padding: 16px 0; border-bottom: 1px solid var(--line-2); font-size: 14px; }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row strong { font-weight: 600; color: var(--muted); }
+  .contact-row span { color: var(--ink); font-weight: 500; }
+
+  .bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); max-width: 520px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; background: white; border-top: 1px solid var(--line); z-index: 50; }
+  .bnav-btn { padding: 18px; font-size: 15px; font-weight: 700; text-align: center; letter-spacing: -0.3px; }
+  .bnav-call { background: var(--ink); color: white; }
+  .bnav-kakao { background: white; color: var(--ink); border-left: 1px solid var(--line); }
+</style>
+</head>
+<body>
+
+<div class="demo-bar">
+  <span>사이트온 샘플 · 과외·공부방 업종</span>
+  <a href="/">← 메인으로</a>
+</div>
+
+<nav class="nav">
+  <div class="nav-brand"><span>•</span> 도담학습</div>
+  <a href="tel:010-0000-0000" class="nav-tel">010-0000-0000</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">1:1 PRIVATE TUTORING</div>
+    <h1>학원이 아닌,<br><strong>한 사람을 위한 수업.</strong></h1>
+    <p class="hero-sub">중·고등 수학·영어 1:1 맞춤 과외.<br>무료 진단 후 학생에게 가장 부족한 부분부터 시작합니다.</p>
+    <div class="hero-cta-row">
+      <a href="tel:010-0000-0000" class="btn-primary">무료 진단 신청</a>
+      <a href="#tutors" class="btn-secondary">강사 보기</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">12<span class="unit">년</span></div><div class="stat-label">강사 경력</div></div>
+  <div class="stat"><div class="stat-num">240<span class="unit">+</span></div><div class="stat-label">누적 학생 수</div></div>
+  <div class="stat"><div class="stat-num">87<span class="unit">%</span></div><div class="stat-label">목표 달성률</div></div>
+</div>
+
+<section class="sec" id="tutors">
+  <div class="sec-eyebrow">Tutors</div>
+  <h2 class="sec-title">강사 소개</h2>
+  <p class="sec-lead">현직 교사·명문대 출신 강사가 직접 가르칩니다.<br>학생과의 매칭은 무료 진단 후 결정합니다.</p>
+
+  <div class="tutor-list">
+    <div class="tutor">
+      <div class="tutor-img" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80')"></div>
+      <div class="tutor-info">
+        <h4>김도담 강사</h4>
+        <div class="tutor-subj">중·고등 수학</div>
+        <div class="tutor-edu">서울대학교 수학교육과<br><small>전 강남 대형 학원 강사 · 경력 12년</small></div>
+      </div>
+    </div>
+    <div class="tutor">
+      <div class="tutor-img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80')"></div>
+      <div class="tutor-info">
+        <h4>박진현 강사</h4>
+        <div class="tutor-subj">중·고등 영어</div>
+        <div class="tutor-edu">고려대학교 영문학과<br><small>현직 중학교 영어교사 · 경력 9년</small></div>
+      </div>
+    </div>
+    <div class="tutor">
+      <div class="tutor-img" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80')"></div>
+      <div class="tutor-info">
+        <h4>이지윤 강사</h4>
+        <div class="tutor-subj">초·중등 수학·영어</div>
+        <div class="tutor-edu">이화여자대학교 수학과<br><small>초등 통합 학습 전문 · 경력 7년</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="sec-eyebrow">Program</div>
+  <h2 class="sec-title">수업 안내</h2>
+  <p class="sec-lead">학년·과목·진도에 따라 시간과 비용이 달라집니다.<br>모든 수강료에는 교재 및 월말 리포트가 포함됩니다.</p>
+
+  <div class="service-list">
+    <div class="service-item">
+      <div class="service-info"><h4>초등 (4-6학년)</h4><p>주 2회 · 회당 60분 · 수학 또는 영어</p></div>
+      <div class="service-price">월 280,000원</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info"><h4>중등</h4><p>주 2회 · 회당 90분 · 수학 또는 영어</p></div>
+      <div class="service-price">월 360,000원</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info"><h4>고등</h4><p>주 2회 · 회당 100분 · 수학 또는 영어</p></div>
+      <div class="service-price">월 440,000원</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info"><h4>고등 (수학+영어)</h4><p>주 4회 · 두 과목 통합 관리</p></div>
+      <div class="service-price">월 780,000원</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow">Results</div>
+  <h2 class="sec-title">성적 향상 사례</h2>
+  <p class="sec-lead">개인정보 보호를 위해 학년·학교명은 비공개로 안내합니다.</p>
+
+  <div class="results-list">
+    <div class="result-card">
+      <div class="result-meta">중3 · 수학 · 4개월</div>
+      <div class="result-headline">3등급 <span class="result-arrow">→</span> 1등급</div>
+      <div class="result-desc">중간고사 기준 3등급에서 시작, 약점인 함수·확률 단원을 집중 보강하여 기말고사 1등급 진입.</div>
+    </div>
+    <div class="result-card">
+      <div class="result-meta">고1 · 영어 · 6개월</div>
+      <div class="result-headline">68점 <span class="result-arrow">→</span> 91점</div>
+      <div class="result-desc">독해 속도 부족 진단 후 구문 분석 위주 커리큘럼, 모의고사 점수 23점 상승.</div>
+    </div>
+    <div class="result-card">
+      <div class="result-meta">고2 · 수학 · 8개월</div>
+      <div class="result-headline">5등급 <span class="result-arrow">→</span> 2등급</div>
+      <div class="result-desc">개념 누락 단원을 처음부터 재정비, 정시 목표 학생의 수능 모의 안정 2등급 달성.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="sec-eyebrow">Process</div>
+  <h2 class="sec-title">진행 절차</h2>
+  <p class="sec-lead">진단부터 첫 수업까지<br>일주일 내에 시작하실 수 있도록 진행합니다.</p>
+
+  <div class="process-list">
+    <div class="process-item"><div class="process-num">1</div>
+      <div class="process-text"><h4>전화 상담</h4><p>학년, 과목, 현재 성적을 알려주시기 바랍니다.</p></div></div>
+    <div class="process-item"><div class="process-num">2</div>
+      <div class="process-text"><h4>무료 진단 테스트</h4><p>현재 실력을 정확히 파악하기 위한 1회 진단 (무료).</p></div></div>
+    <div class="process-item"><div class="process-num">3</div>
+      <div class="process-text"><h4>강사 매칭 및 시범 수업</h4><p>학생 성향에 맞는 강사를 매칭하고 시범 수업을 진행합니다.</p></div></div>
+    <div class="process-item"><div class="process-num">4</div>
+      <div class="process-text"><h4>커리큘럼 확정 및 시작</h4><p>월별 목표를 정해 정식 수업을 시작합니다.</p></div></div>
+    <div class="process-item"><div class="process-num">5</div>
+      <div class="process-text"><h4>월말 학부모 리포트</h4><p>학습 진도·태도·다음 달 계획을 매월 공유합니다.</p></div></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow">Why Dodam</div>
+  <h2 class="sec-title">도담학습의 약속</h2>
+  <p class="sec-lead">학생 한 사람에게만 집중합니다.<br>학원이 채워주지 못하는 빈 곳을 채웁니다.</p>
+
+  <div class="cred-grid">
+    <div class="cred-card"><div class="cred-mark">진단</div><div class="cred-name">무료 진단 테스트</div><div class="cred-sub">정확한 출발점부터</div></div>
+    <div class="cred-card"><div class="cred-mark">1:1</div><div class="cred-name">완전 1:1 수업</div><div class="cred-sub">학생 한 사람에 집중</div></div>
+    <div class="cred-card"><div class="cred-mark">리포트</div><div class="cred-name">월말 학부모 리포트</div><div class="cred-sub">학습 진도·태도 공유</div></div>
+    <div class="cred-card"><div class="cred-mark">환불</div><div class="cred-name">불만족 시 차감 환불</div><div class="cred-sub">남은 수업 일할 정산</div></div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="sec-eyebrow">Review</div>
+  <h2 class="sec-title">학부모 후기</h2>
+  <p class="sec-lead">실제 자녀를 맡겨주신 학부모님들의 후기입니다.</p>
+
+  <div class="review-list">
+    <div class="review-item">
+      <p class="review-text">학원에 다닐 때는 따라가기 바빴는데, 1:1로 받으니 모르는 부분에서 멈춰서 충분히 설명을 들을 수 있다고 합니다. 자신감이 많이 붙었어요.</p>
+      <div class="review-meta"><span class="review-name">정○○ 학부모 · 중2</span><span>2025. 06</span></div>
+    </div>
+    <div class="review-item">
+      <p class="review-text">월말마다 보내주시는 리포트에 학습 외 학생 태도나 멘탈 부분까지 적어주셔서 자녀 상태를 파악하기 좋습니다. 진학 상담까지 함께 봐주십니다.</p>
+      <div class="review-meta"><span class="review-name">박○○ 학부모 · 고1</span><span>2025. 05</span></div>
+    </div>
+    <div class="review-item">
+      <p class="review-text">고2 수학을 처음부터 다시 잡아야 했는데, 강사님이 부담 주지 않으시면서 단계별로 끌어올려 주셨습니다. 정시 준비에 큰 도움이 됐습니다.</p>
+      <div class="review-meta"><span class="review-name">최○○ 학부모 · 고2</span><span>2025. 04</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow">FAQ</div>
+  <h2 class="sec-title">자주 묻는 질문</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">방문 과외와 공부방 중 선택할 수 있나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">두 가지 모두 가능합니다. 가정 방문 수업은 출장비가 추가됩니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">시범 수업 비용이 있나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">진단 테스트와 시범 수업은 무료입니다. 정식 등록 의무도 없습니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">강사가 마음에 들지 않으면 교체할 수 있나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">가능합니다. 첫 달 안에 강사 교체 요청 시 무료로 재매칭해 드립니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">중도 환불은 가능한가요?<span class="faq-arr"></span></button>
+      <div class="faq-a">남은 수업 횟수 기준으로 일할 환불해 드립니다. 위약금은 없습니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faq(this)">결석한 수업은 어떻게 되나요?<span class="faq-arr"></span></button>
+      <div class="faq-a">사전 통보 시 보강 수업으로 진행합니다. 무단 결석은 보강이 어려운 점 양해 부탁드립니다.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h3 class="cta-band-title">진단 한 번이<br>변화의 시작입니다.</h3>
+  <p class="cta-band-sub">무료 진단·시범 수업, 부담 없이 신청하세요.<br>학부모님 상담은 카톡으로도 받습니다.</p>
+  <a href="tel:010-0000-0000" class="cta-tel-large">010-0000-0000</a>
+</section>
+
+<section class="contact-info">
+  <div class="contact-row"><strong>운영</strong><span>도담학습 · 김도담</span></div>
+  <div class="contact-row"><strong>전화</strong><span>010-0000-0000</span></div>
+  <div class="contact-row"><strong>운영시간</strong><span>평일 14:00 - 22:00 / 주말 상담</span></div>
+  <div class="contact-row"><strong>운영지역</strong><span>서울 강남·서초·송파 · 분당</span></div>
+  <div class="contact-row"><strong>공부방</strong><span>서울 강남구 ○○로 ○○</span></div>
+</section>
+
+<div class="bottom-nav">
+  <a href="tel:010-0000-0000" class="bnav-btn bnav-call">전화 상담</a>
+  <a href="https://open.kakao.com/o/sXXXXXXX" class="bnav-btn bnav-kakao">카톡 문의</a>
+</div>
+
+<script>
+function faq(btn) {
+  const a = btn.nextElementSibling;
+  const wasOpen = a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(x => x.classList.remove('open'));
+  if (!wasOpen) { a.classList.add('open'); btn.classList.add('open'); }
+}
+</script>
+</body>
+</html>
